@@ -2,10 +2,10 @@
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
-			<item value="mysql"/>
-			<item value="validation"/>
-			<item value="projectlombok"/>
+			<item value="dto.setImageUrl(t.getImageUrl());"/>
+			<item value="JwtAuthenticationFilter"/>
 		</list>
 	</section>
 </section>

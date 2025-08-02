@@ -8,12 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AnnapurnaApplication {
 
     public static void main(String[] args) {
-        // Load .env file
+
         Dotenv dotenv = Dotenv.configure()
                               .ignoreIfMissing()
                               .load();
 
-        // Set each environment variable as system property
         dotenv.entries().forEach(entry ->
             System.setProperty(entry.getKey(), entry.getValue())
         );

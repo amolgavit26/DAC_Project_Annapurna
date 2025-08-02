@@ -21,7 +21,7 @@ public class AddressController {
     private final JwtProvider jwtProvider;
 
     private User getCurrentUser(String authHeader) {
-        String token = authHeader.substring(7); // Remove "Bearer "
+        String token = authHeader.substring(7);
         String email = jwtProvider.getEmailFromToken(token);
         return userService.getByEmail(email);
     }

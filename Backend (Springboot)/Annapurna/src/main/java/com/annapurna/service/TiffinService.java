@@ -15,7 +15,6 @@ public class TiffinService {
 
     private final TiffinRepository tiffinRepository;
 
-    // For DTO-based creation
     public Tiffin addTiffin(TiffinDTO dto, User vendor) {
         Tiffin tiffin = Tiffin.builder()
                 .name(dto.getName())
@@ -27,7 +26,6 @@ public class TiffinService {
     }
 
 
-    // Save any Tiffin object
     public void saveTiffin(Tiffin tiffin) {
         tiffinRepository.save(tiffin);
     }

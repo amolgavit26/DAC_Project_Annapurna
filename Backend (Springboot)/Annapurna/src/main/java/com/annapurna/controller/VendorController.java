@@ -35,10 +35,10 @@ public class VendorController {
     private User getCurrentVendor(String authHeader) {
         String token = authHeader.startsWith("Bearer ") ? authHeader.substring(7) : authHeader;
         String email = jwtProvider.getEmailFromToken(token);
-        System.out.println("🔐 Extracted email from token: " + email);
+        System.out.println("Extracted email from token: " + email);
 
         User user = userService.getByEmail(email);
-        System.out.println("🧑 Resolved user ID: " + user.getId() + ", role: " + user.getRole());
+        System.out.println("Resolved user ID: " + user.getId() + ", role: " + user.getRole());
 
         if (user.getRole() != Role.VENDOR) {
             throw new RuntimeException("Only vendors can access this endpoint.");
@@ -63,7 +63,6 @@ public class VendorController {
         tiffin.setCategory(category);
         tiffin.setVendor(vendor);
 
-        // ✅ Save image if provided
         if (image != null && !image.isEmpty()) {
             try {
                 byte[] imageBytes = image.getBytes();

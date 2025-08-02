@@ -28,7 +28,7 @@ public class Tiffin {
 
 	@ManyToOne
 	@JoinColumn(name = "vendor_id")
-	private User vendor; // Vendor is also a user with role=VENDOR
+	private User vendor;
 
 	@OneToMany(mappedBy = "tiffin", cascade = CascadeType.ALL)
 	private List<Order> orders;

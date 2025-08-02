@@ -1,4 +1,3 @@
-// src/main/java/com/annapurna/backend/config/WebConfig.java
 
 package com.annapurna.config;
 

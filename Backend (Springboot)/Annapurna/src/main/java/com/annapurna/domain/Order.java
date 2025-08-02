@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "orders") // 'order' is a reserved keyword in SQL
+@Table(name = "orders")
 public class Order {
 
 	@Id
@@ -28,7 +28,15 @@ public class Order {
 	private Tiffin tiffin;
 
 	@Enumerated(EnumType.STRING)
-	@Column(length = 20) 
+	@Column(length = 20)
 	private OrderStatus status = OrderStatus.PENDING;
 
+	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
+	private PaymentStatus paymentStatus = PaymentStatus.PENDING;
+
+	private String razorpayOrderId;
+	private String razorpayReceipt;
+	private String razorpayStatus;
+	private String razorpayPaymentId;
 }

@@ -34,28 +34,48 @@ public class OrderService {
 		return orderRepository.findByCustomer(customer);
 	}
 	
-	
-	// OrderService.java
+
 	@Transactional
 	public void cancelOrder(Long orderId, User user) {
 	    Order order = orderRepository.findById(orderId)
 	            .orElseThrow(() -> new RuntimeException("Order not found"));
 
-	    // Only allow cancel by the customer who placed it
 	    if (!order.getCustomer().getId().equals(user.getId())) {
 	        throw new RuntimeException("You are not authorized to cancel this order.");
 	    }
 
-	    // Only allow cancellation within 5 minutes
 	    LocalDateTime now = LocalDateTime.now();
 	    if (order.getOrderTime().plusMinutes(5).isBefore(now)) {
 	        throw new RuntimeException("Order can only be cancelled within 5 minutes of placing.");
 	    }
 
-	    // ✅ Mark order as CANCELLED instead of deleting
 	    order.setStatus(OrderStatus.CANCELLED);
 	    orderRepository.save(order);
 	}
+	
+	
+	
+	
+
+	public Order getOrderById(Long orderId) {
+        return orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
+    }
+	
+	public Order save(Order order) {
+	    return orderRepository.save(order);
+	}
+
+	
+	public void markAsPaid(Long orderId, String razorpayOrderId, String razorpayPaymentId) {
+	    Order order = getOrderById(orderId);
+	    order.setPaymentStatus(PaymentStatus.PAID);
+	    order.setRazorpayOrderId(razorpayOrderId);
+	    order.setRazorpayPaymentId(razorpayPaymentId);
+	    orderRepository.save(order);
+	}
+
+
 
 
 }

@@ -47,7 +47,7 @@ const AppNavbar = () => {
                         {role === 'VENDOR' && (
                             <>
                                 <Nav.Link as={Link} to="/vendor">Dashboard</Nav.Link>
-                                <Nav.Link as={Link} to="/vendor/orders">Orders</Nav.Link> {/* Optional */}
+                                <Nav.Link as={Link} to="/vendor/orders">Orders</Nav.Link>
                             </>
                         )}
 

@@ -23,7 +23,6 @@ const Login = () => {
                 password
             });
 
-            // ✅ Updated to handle token and userId from object
             const { token, userId } = response.data;
             const pureToken = token.replace('Bearer ', '');
             const decoded = jwtDecode(pureToken);
@@ -33,12 +32,12 @@ const Login = () => {
                 throw new Error('Invalid login response: token, role, or userId missing');
             }
 
-            localStorage.setItem('token', pureToken);         // Full token with "Bearer"
+            localStorage.setItem('token', pureToken);
             localStorage.setItem('role', role);
             localStorage.setItem('userId', userId);
 
             toast.success('Login successful!');
-            console.log('🔐 Logged in as:', role, '🆔 ID:', userId);
+            console.log('Logged in as:', role, 'ID:', userId);
 
             if (role === 'CUSTOMER') {
                 navigate('/CustomerDashboard');

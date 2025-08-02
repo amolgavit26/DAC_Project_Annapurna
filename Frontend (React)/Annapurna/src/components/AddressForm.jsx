@@ -42,11 +42,11 @@ const AddressForm = () => {
             } else {
                 console.warn("Unexpected address response:", res.data);
                 setVariant('warning');
-                setMessage('⚠️ Unexpected address response.');
+                setMessage('Unexpected address response.');
             }
         } catch (err) {
             setVariant('danger');
-            setMessage('❌ Failed to fetch address');
+            setMessage('Failed to fetch address');
             console.error(err);
         }
     };
@@ -61,10 +61,10 @@ const AddressForm = () => {
                 }
             });
             setVariant('success');
-            setMessage('✅ Address updated successfully!');
+            setMessage('Address updated successfully!');
         } catch (err) {
             setVariant('danger');
-            setMessage('❌ Failed to update address.');
+            setMessage('Failed to update address.');
             console.error(err);
         }
     };

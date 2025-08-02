@@ -26,7 +26,7 @@ const AdminDashboard = () => {
             setCustomers(res.data);
         } catch (err) {
             console.error('Error fetching customers', err);
-            toast.error("❌ Failed to fetch customers");
+            toast.error("Failed to fetch customers");
         }
     };
 
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
             setVendors(res.data);
         } catch (err) {
             console.error('Error fetching vendors', err);
-            toast.error("❌ Failed to fetch vendors");
+            toast.error("Failed to fetch vendors");
         }
     };
 
@@ -47,11 +47,11 @@ const AdminDashboard = () => {
             await axios.delete(`http://localhost:8080/api/admin/delete/${customerId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            toast.success("✅ Customer deleted successfully!");
+            toast.success("Customer deleted successfully!");
             fetchCustomers();
         } catch (err) {
             console.error("Error deleting customer", err);
-            toast.error("❌ Failed to delete customer");
+            toast.error("Failed to delete customer");
         }
     };
 
@@ -60,11 +60,11 @@ const AdminDashboard = () => {
             await axios.delete(`http://localhost:8080/api/admin/vendor/delete/${vendorId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            toast.success("✅ Vendor deleted successfully!");
+            toast.success("Vendor deleted successfully!");
             fetchVendors();
         } catch (err) {
             console.error("Error deleting vendor", err);
-            toast.error("❌ Failed to delete vendor");
+            toast.error("Failed to delete vendor");
         }
     };
 

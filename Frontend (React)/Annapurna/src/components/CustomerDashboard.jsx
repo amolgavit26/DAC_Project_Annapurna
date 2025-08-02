@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table, Alert, Spinner, Button } from 'react-bootstrap';
-import AddressForm from './AddressForm'; // ✅ Import the new component
+import AddressForm from './AddressForm';
 
 const CustomerDashboard = () => {
     const [orders, setOrders] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
-    const [showAddressForm, setShowAddressForm] = useState(false); // ✅ toggle state
+    const [showAddressForm, setShowAddressForm] = useState(false);
 
     useEffect(() => {
         fetchOrders();
@@ -23,7 +23,7 @@ const CustomerDashboard = () => {
             });
             setOrders(Array.isArray(response.data) ? response.data : []);
         } catch (err) {
-            console.error('❌ Error fetching orders:', err);
+            console.error('Error fetching orders:', err);
             setError('Failed to load orders.');
         } finally {
             setLoading(false);
@@ -42,10 +42,10 @@ const CustomerDashboard = () => {
                     }
                 }
             );
-            alert('❌ Order cancelled successfully!');
+            alert('Order cancelled successfully!');
             fetchOrders();
         } catch (err) {
-            console.error('❌ Failed to cancel order:', err);
+            console.error('Failed to cancel order:', err);
             alert(err.response?.data?.message || 'Cancel failed');
         }
     };
@@ -57,6 +57,46 @@ const CustomerDashboard = () => {
         return diffInMinutes <= 5;
     };
 
+    const initiatePayment = async (orderId) => {
+        const token = localStorage.getItem('token');
+        try {
+            const razorpayRes = await axios.post(
+                `http://localhost:8080/api/orders/${orderId}/pay`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+            );
+
+            const data = razorpayRes.data;
+
+            const script = document.createElement('script');
+            script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+            script.onload = () => {
+                const rzp = new window.Razorpay({
+                    key: 'rzp_test_OxwxzdrU2pZqIo', // 🔁 Replace with your actual Razorpay Key ID
+                    amount: data.amount,
+                    currency: data.currency,
+                    name: 'Annapurna Tiffins',
+                    description: 'Tiffin Payment',
+                    order_id: data.id,
+                    handler: function (response) {
+                        alert('Payment Successful!');
+                        fetchOrders(); // Refresh order list after payment
+                    },
+                    theme: { color: '#007bff' }
+                });
+                rzp.open();
+            };
+            document.body.appendChild(script);
+        } catch (err) {
+            console.error('Payment failed:', err);
+            alert('Payment initiation failed.');
+        }
+    };
+
     return (
         <div className="container mt-4">
             <h2>Customer Dashboard</h2>
@@ -64,7 +104,6 @@ const CustomerDashboard = () => {
             {error && <Alert variant="danger">{error}</Alert>}
             {loading && <Spinner animation="border" variant="primary" />}
 
-            {/* ✅ Address Toggle Button */}
             <Button
                 onClick={() => setShowAddressForm(!showAddressForm)}
                 variant="outline-primary"
@@ -73,10 +112,8 @@ const CustomerDashboard = () => {
                 {showAddressForm ? 'Hide Address Form' : 'Manage Address'}
             </Button>
 
-            {/* ✅ Address Form if visible */}
             {showAddressForm && <AddressForm />}
 
-            {/* Orders Table */}
             {!loading && orders.length > 0 && (
                 <Table striped bordered hover>
                     <thead>
@@ -87,7 +124,9 @@ const CustomerDashboard = () => {
                             <th>Total Price</th>
                             <th>Status</th>
                             <th>Order Time</th>
+                            <th>Razorpay ID</th>
                             <th>Action</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -101,6 +140,7 @@ const CustomerDashboard = () => {
                                     <td>₹{order.totalPrice}</td>
                                     <td>{order.status}</td>
                                     <td>{new Date(order.orderTime).toLocaleString()}</td>
+                                    <td>{order.razorpayOrderId || 'N/A'}</td>
                                     <td>
                                         {cancelable && order.status === 'PENDING' ? (
                                             <Button
@@ -112,6 +152,19 @@ const CustomerDashboard = () => {
                                             </Button>
                                         ) : (
                                             <span style={{ color: 'gray' }}>Not Allowed</span>
+                                        )}
+                                    </td>
+                                    <td>
+                                        {order.paymentStatus === 'PENDING' ? (
+                                            <Button
+                                                variant="success"
+                                                size="sm"
+                                                onClick={() => initiatePayment(order.orderId)}
+                                            >
+                                                Pay Now
+                                            </Button>
+                                        ) : (
+                                            <span style={{ color: 'green' }}>Paid</span>
                                         )}
                                     </td>
                                 </tr>

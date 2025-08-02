@@ -72,7 +72,7 @@ const VendorDashboard = () => {
             formData.append("price", editingTiffin.price);
             formData.append("category", editingTiffin.category);
             if (editingTiffin.image) {
-                formData.append("image", editingTiffin.image); // 👈 optional new image
+                formData.append("image", editingTiffin.image);
             }
 
             await axios.put(
@@ -151,10 +151,10 @@ const VendorDashboard = () => {
 
             <div className="mb-3 text-end">
                 <Button variant="primary" className="me-2" onClick={() => setShowAddModal(true)}>
-                    ➕ Add Tiffin
+                    Add Tiffin
                 </Button>
                 <Button variant="info" className="me-2" onClick={() => navigate('/vendor/orders')}>
-                    📦 View Orders
+                    View Orders
                 </Button>
                 <Button variant="outline-success" onClick={() => setShowAddressForm(!showAddressForm)}>
                     {showAddressForm ? 'Hide Address Form' : 'Manage Address'}
@@ -194,7 +194,6 @@ const VendorDashboard = () => {
                 ))}
             </Row>
 
-            {/* Edit Modal */}
             <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Tiffin</Modal.Title>
@@ -264,7 +263,6 @@ const VendorDashboard = () => {
                 </Modal.Footer>
             </Modal>
 
-            {/* Add Modal */}
             <Modal show={showAddModal} onHide={() => setShowAddModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add New Tiffin</Modal.Title>

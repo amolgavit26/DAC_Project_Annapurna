@@ -1,4 +1,3 @@
-// src/pages/Register.jsx
 
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
@@ -127,7 +126,6 @@ const Register = () => {
                             </Form.Select>
                         </Form.Group>
 
-                        {/* Address Fields */}
                         <h5 className="mt-4">Address</h5>
 
                         <Form.Group controlId="formStreet" className="mb-3">

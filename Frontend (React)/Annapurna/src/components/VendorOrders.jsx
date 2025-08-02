@@ -35,7 +35,6 @@ const VendorOrders = () => {
     const handleStatusChange = async (orderId, newStatus) => {
         setStatusUpdating(orderId);
 
-        // 👇 Optimistically update UI BEFORE the backend responds
         setOrders((prevOrders) =>
             prevOrders.map((order) =>
                 order.orderId === orderId ? { ...order, status: newStatus } : order
@@ -58,8 +57,7 @@ const VendorOrders = () => {
             console.error(err);
             toast.error('Failed to update order status');
 
-            // Optional: rollback status on error
-            fetchOrders(); // Only if rollback needed
+            fetchOrders();
         } finally {
             setStatusUpdating(null);
         }
@@ -113,7 +111,6 @@ const VendorOrders = () => {
                                             onChange={(e) => handleStatusChange(order.orderId, e.target.value)}
                                             disabled={statusUpdating === order.orderId}
                                         >
-                                            {/* Disable selecting the same status again */}
                                             <option value="PENDING">PENDING</option>
                                             <option value="ACCEPTED">ACCEPTED</option>
                                             <option value="DELIVERED">DELIVERED</option>

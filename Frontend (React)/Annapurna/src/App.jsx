@@ -1,3 +1,4 @@
+// src/App.jsx
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
@@ -19,13 +20,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/vendor" element={<VendorDashboard />} />
+        {/* <Route path="/admin" element={<AdminDashboard />} /> */}
         <Route path="/tiffins" element={<TiffinList />} />
         <Route path="/vendor/orders" element={<VendorOrders />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/order-form/:tiffinId" element={<OrderForm />} />
         <Route path="/customer/dashboard" element={<CustomerDashboard />} />
+        <Route path="/vendor/dashboard" element={<VendorDashboard />} />
       </Routes>
     </Router>
   );

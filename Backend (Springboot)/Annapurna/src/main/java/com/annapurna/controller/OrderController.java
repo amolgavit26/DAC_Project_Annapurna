@@ -1,6 +1,7 @@
 package com.annapurna.controller;
 
 import com.annapurna.domain.Order;
+
 import com.annapurna.domain.User;
 import com.annapurna.dto.OrderDTO;
 import com.annapurna.dto.OrderResponseDTO;
@@ -16,6 +17,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 
 
 import java.util.List;
@@ -143,4 +147,43 @@ public class OrderController {
     }
 
 
+    
+    
+    
+    
+    
+    @GetMapping("/{orderId}/receipt")
+    public ResponseEntity<byte[]> downloadReceipt(@PathVariable Long orderId,
+                                                  @RequestHeader("Authorization") String authHeader) {
+        try {
+            User customer = getCurrentUser(authHeader);
+            Order order = orderService.getOrderById(orderId);
+
+            if (!order.getCustomer().getId().equals(customer.getId())) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+            }
+
+            byte[] pdfBytes = orderService.generateReceiptPdf(order);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_PDF);
+            headers.setContentDispositionFormData("attachment", "receipt_order_" + orderId + ".pdf");
+
+            return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(null);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

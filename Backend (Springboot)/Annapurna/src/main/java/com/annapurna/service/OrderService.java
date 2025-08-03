@@ -12,6 +12,11 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
+import com.lowagie.text.*;
+import com.lowagie.text.pdf.*;
+import java.io.ByteArrayOutputStream;
+
 @Service
 @RequiredArgsConstructor
 public class OrderService {
@@ -77,5 +82,48 @@ public class OrderService {
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public byte[] generateReceiptPdf(Order order) throws Exception {
+	    Document document = new Document();
+	    ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+	    PdfWriter.getInstance(document, out);
+	    document.open();
+
+	    Font titleFont = new Font(Font.HELVETICA, 20, Font.BOLD);
+	    Font normalFont = new Font(Font.HELVETICA, 12);
+
+	    document.add(new Paragraph("Annapurna Tiffins - Order Receipt", titleFont));
+	    document.add(new Paragraph(" "));
+	    document.add(new Paragraph("Order ID: " + order.getId(), normalFont));
+	    document.add(new Paragraph("Customer: " + order.getCustomer().getFullName(), normalFont));
+	    document.add(new Paragraph("Tiffin: " + order.getTiffin().getName(), normalFont));
+	    document.add(new Paragraph("Quantity: " + order.getQuantity(), normalFont));
+	    document.add(new Paragraph("Total Price: ₹" + order.getTotalPrice(), normalFont));
+	    document.add(new Paragraph("Order Time: " + order.getOrderTime(), normalFont));
+	    document.add(new Paragraph("Payment Status: " + order.getPaymentStatus(), normalFont));
+	    document.add(new Paragraph("Razorpay Order ID: " + order.getRazorpayOrderId(), normalFont));
+
+	    document.close();
+	    return out.toByteArray();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

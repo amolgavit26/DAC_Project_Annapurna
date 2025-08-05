@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
+import About from './pages/aboutus'; 
+import Contact from './pages/contactus'; 
 import VendorDashboard from './components/VendorDashboard';
 import TiffinList from './components/TiffinList';
 import Navbar from './components/AppNavbar';
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/admin" element={<AdminDashboard />} /> */}
         <Route path="/tiffins" element={<TiffinList />} />

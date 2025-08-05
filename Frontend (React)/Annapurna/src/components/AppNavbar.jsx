@@ -119,6 +119,7 @@ const AppNavbar = () => {
                     text-decoration: none !important;
                     position: relative !important;
                     overflow: hidden !important;
+                    white-space: nowrap !important;
                 }
                 
                 .nav-link-custom:hover {
@@ -132,6 +133,29 @@ const AppNavbar = () => {
                     background: rgba(255, 255, 255, 0.2) !important;
                     color: #fbbf24 !important;
                     font-weight: bold !important;
+                }
+                
+                // /* Special styling for info links (About Us & Contact Us) */
+                // .info-link {
+                //     background: rgba(251, 191, 36, 0.1) !important;
+                //     border: 1px solid rgba(251, 191, 36, 0.3) !important;
+                //     color: #eae4d7ff !important;
+                //     font-weight: 600 !important;
+                //     font-size: 0.9rem !important;
+                //     padding: 6px 14px !important;
+                // }
+                
+                // .info-link:hover {
+                //     background: rgba(251, 191, 36, 0.2) !important;
+                //     border-color: rgba(251, 191, 36, 0.5) !important;
+                //     color: #fbbf24 !important;
+                //     box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2) !important;
+                // }
+                
+                .info-link.active {
+                    background: rgba(251, 191, 36, 0.25) !important;
+                    border-color: rgba(251, 191, 36, 0.6) !important;
+                    color: #ffffff !important;
                 }
                 
                 .navbar-toggler {
@@ -157,6 +181,7 @@ const AppNavbar = () => {
                     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
                     transition: all 0.3s ease !important;
                     color: white !important;
+                    white-space: nowrap !important;
                 }
                 
                 .logout-btn:hover {
@@ -188,6 +213,11 @@ const AppNavbar = () => {
                     backdrop-filter: blur(10px);
                 }
                 
+                .navbar-nav {
+                    flex-wrap: wrap;
+                    gap: 2px;
+                }
+                
                 @media (min-width: 992px) {
                     .navbar-collapse {
                         background: none !important;
@@ -195,6 +225,49 @@ const AppNavbar = () => {
                         padding: 0 !important;
                         margin-top: 0 !important;
                         backdrop-filter: none !important;
+                    }
+                    
+                    .navbar-nav {
+                        flex-wrap: nowrap;
+                        gap: 0;
+                    }
+                }
+                
+                @media (max-width: 991px) {
+                    .nav-link-custom {
+                        margin: 2px 0 !important;
+                        text-align: center !important;
+                    }
+                    
+                    .info-link {
+                        margin: 2px 0 !important;
+                        text-align: center !important;
+                    }
+                    
+                    .logout-btn {
+                        margin-top: 8px !important;
+                        width: 100% !important;
+                        text-align: center !important;
+                    }
+                    
+                    .navbar-brand {
+                        font-size: 1.5rem !important;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .navbar-brand {
+                        font-size: 1.3rem !important;
+                    }
+                    
+                    .nav-link-custom {
+                        font-size: 0.9rem !important;
+                        padding: 6px 12px !important;
+                    }
+                    
+                    .info-link {
+                        font-size: 0.85rem !important;
+                        padding: 5px 12px !important;
                     }
                 }
             `}</style>
@@ -234,6 +307,23 @@ const AppNavbar = () => {
                                 🍽️ Tiffins
                             </Nav.Link>
 
+                            {/* New About Us and Contact Us Links with special styling */}
+                            <Nav.Link 
+                                as={Link} 
+                                to="/about" 
+                                className={`nav-link-custom  ${location.pathname === '/about' ? 'active' : ''}`}
+                            >
+                                ℹ️ About Us
+                            </Nav.Link>
+                            <Nav.Link 
+                                as={Link} 
+                                to="/contact" 
+                                className={`nav-link-custom  ${location.pathname === '/contact' ? 'active' : ''}`}
+                            >
+                                📞 Contact Us
+                            </Nav.Link>
+
+                            {/* Role-based Dashboard Links */}
                             {isLoggedIn && role === 'ADMIN' && (
                                 <Nav.Link 
                                     as={Link} 

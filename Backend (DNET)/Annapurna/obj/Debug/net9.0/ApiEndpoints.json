@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "Annapurna.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Annapurna.Models.Requests.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Annapurna.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Annapurna.Models.Requests.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Annapurna.Controllers.UserController",
+    "Method": "GetCurrentUser",
+    "RelativePath": "users/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Annapurna.Controllers.UserController",
+    "Method": "UpdateAddress",
+    "RelativePath": "users/me/address",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updated",
+        "Type": "Annapurna.Models.Requests.AddressRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

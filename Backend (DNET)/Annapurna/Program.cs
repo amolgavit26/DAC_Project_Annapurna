@@ -1,36 +1,63 @@
-namespace Annapurna
-{
-    public class Program
+using Annapurna.Data;
+using Annapurna.Security;
+using Annapurna.Services;
+using Annapurna.Services.Interfaces;
+using Annapurna.Models.Config;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Text.Json.Serialization;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Register EF Core with SQL Server
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Register JWT and services
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
     {
-        public static void Main(string[] args)
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            var builder = WebApplication.CreateBuilder(args);
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtSettings.Issuer,
+            ValidAudience = jwtSettings.Audience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
+        };
+    });
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<JwtProvider>();
+builder.Services.AddScoped<IUserService, UserService>();
 
-            var app = builder.Build();
+// Enum binding fix
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-            app.UseHttpsRedirection();
-            app.UseRouting();
+var app = builder.Build();
 
-            app.UseAuthorization();
-
-            app.MapStaticAssets();
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
-                .WithStaticAssets();
-
-            app.Run();
-        }
-    }
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseRouting();
+app.UseAuthentication(); //  Must be before UseAuthorization
+app.UseAuthorization();
+
+app.MapControllers();
+app.Run();

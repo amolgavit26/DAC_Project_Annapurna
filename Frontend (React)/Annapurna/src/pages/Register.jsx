@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert, Card, Badge } from 'react-bootstrap';
-import axios from 'axios';
+import api from '../services/api';
+import BASE_URL from '../config';
+
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -45,34 +47,39 @@ const Register = () => {
     };
 
     const handleRegister = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        try {
-            const response = await axios.post('http://localhost:8080/api/auth/register', formData);
-            setMessage('Registration successful! You can now login.');
-            setError('');
-            // Clear form on successful registration
-            setFormData({
-                fullName: '',
-                email: '',
-                password: '',
-                mobileNumber: '',
-                role: 'CUSTOMER',
-                address: {
-                    street: '',
-                    city: '',
-                    state: '',
-                    pinCode: '',
-                    country: '',
-                },
-            });
-        } catch (err) {
-            setError(err.response?.data?.message || 'Registration failed. Please try again.');
-            setMessage('');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+        console.log('Form Data:', formData); // Log form data to inspect it before submission
+        const response = await api.post(`${BASE_URL}/api/auth/register`, formData);
+        setMessage('Registration successful! You can now login.');
+        setError('');
+        // Clear form on successful registration
+        setFormData({
+            fullName: '',
+            email: '',
+            password: '',
+            mobileNumber: '',
+            role: 'CUSTOMER',
+            address: {
+                street: '',
+                city: '',
+                state: '',
+                pinCode: '',
+                country: '',
+            },
+        });
+    } catch (err) {
+        console.error('Error Response:', err); // Log the error response
+        setError(err.response?.data?.message || 'Registration failed. Please try again.');
+        setMessage('');
+    } finally {
+        setIsSubmitting(false);
+    }
+};
+
+
 
     return (
         <div
@@ -819,7 +826,7 @@ const Register = () => {
                 </Row>
             </Container>
 
-            <style jsx>{`
+            <style>{`
                 @keyframes gradientShift {
                     0% { background-position: 0% 50%; }
                     50% { background-position: 100% 50%; }

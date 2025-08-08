@@ -3,6 +3,9 @@ import { Container, Row, Col, Card, Button, Form, Modal, Spinner, Alert, Badge }
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AddressForm from './AddressForm';
+import BASE_URL from '../config';
+import api from '../services/api';
+
 
 const VendorDashboard = () => {
     const navigate = useNavigate();
@@ -27,7 +30,7 @@ const VendorDashboard = () => {
 
     const fetchVendorTiffins = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/vendor/tiffins', {
+            const res = await api.get(`${BASE_URL}/api/vendor/tiffins`, {
                 headers: {
                     Authorization: token.startsWith('Bearer') ? token : `Bearer ${token}`
                 }
@@ -47,7 +50,7 @@ const VendorDashboard = () => {
     const handleDelete = async (id) => {
         if (!window.confirm('Are you sure you want to delete this tiffin?')) return;
         try {
-            await axios.delete(`http://localhost:8080/api/vendor/tiffins/${id}`, {
+            await api.delete(`${BASE_URL}/api/vendor/tiffins/${id}`, {
                 headers: {
                     Authorization: token.startsWith('Bearer') ? token : `Bearer ${token}`
                 }
@@ -75,8 +78,8 @@ const VendorDashboard = () => {
                 formData.append("image", editingTiffin.image);
             }
 
-            await axios.put(
-                `http://localhost:8080/api/vendor/tiffins/${editingTiffin.id}`,
+            await api.put(
+                `${BASE_URL}/api/vendor/tiffins/${editingTiffin.id}`,
                 formData,
                 {
                     headers: {
@@ -105,7 +108,7 @@ const VendorDashboard = () => {
                 formData.append("image", newTiffin.image);
             }
 
-            await axios.post("http://localhost:8080/api/vendor/tiffins", formData, {
+            await api.post(`${BASE_URL}/api/vendor/tiffins`, formData, {
                 headers: {
                     Authorization: token.startsWith("Bearer") ? token : `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'

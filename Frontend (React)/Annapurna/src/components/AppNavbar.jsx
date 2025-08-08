@@ -103,7 +103,7 @@ const AppNavbar = () => {
     return (
         <>
             {/* Custom CSS */}
-            <style jsx>{`
+            <style>{`
                 .navbar-brand:hover {
                     transform: scale(1.05);
                     filter: brightness(1.2);

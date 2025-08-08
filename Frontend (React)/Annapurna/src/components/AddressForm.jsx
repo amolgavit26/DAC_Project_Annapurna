@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Form, Row, Alert, Card, Spinner } from 'react-bootstrap';
 import axios from 'axios';
+import BASE_URL from '../config';
+import api from '../services/api';
 
 const AddressForm = () => {
     const [formAddress, setFormAddress] = useState({
@@ -15,8 +17,8 @@ const AddressForm = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isUpdating, setIsUpdating] = useState(false);
 
-    const fetchUrl = 'http://localhost:8080/api/address/my';
-    const updateUrl = 'http://localhost:8080/api/address/update';
+    const fetchUrl = `${BASE_URL}/api/address/my`;
+    const updateUrl = `${BASE_URL}/api/address/update`;
 
     useEffect(() => {
         fetchAddress();
@@ -26,7 +28,7 @@ const AddressForm = () => {
         setIsLoading(true);
         const token = localStorage.getItem('token');
         try {
-            const res = await axios.get(fetchUrl, {
+            const res = await api.get(fetchUrl, {
                 headers: {
                     Authorization: token && token.startsWith('Bearer') ? token : `Bearer ${token}`
                 }
@@ -60,7 +62,7 @@ const AddressForm = () => {
         setIsUpdating(true);
         const token = localStorage.getItem('token');
         try {
-            await axios.put(updateUrl, formAddress, {
+            await api.put(updateUrl, formAddress, {
                 headers: {
                     Authorization: token && token.startsWith('Bearer') ? token : `Bearer ${token}`,
                     'Content-Type': 'application/json'

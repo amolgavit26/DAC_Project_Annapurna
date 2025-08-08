@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Form, Button, Alert, Card, Container, Row, Col, InputGroup } from 'react-bootstrap';
+import BASE_URL from '../config';
+import api from '../services/api';
 
 const OrderForm = () => {
     const { tiffinId } = useParams();
@@ -18,8 +20,8 @@ const OrderForm = () => {
 
         try {
             // Step 1: Place the order
-            const orderResponse = await axios.post(
-                'http://localhost:8080/api/orders/place',
+            const orderResponse = await api.post(
+                `${BASE_URL}/api/orders/place`,
                 { tiffinId: parseInt(tiffinId), quantity },
                 {
                     headers: {
@@ -39,8 +41,8 @@ const OrderForm = () => {
             setError('');
 
             // Step 2: Initiate Razorpay order
-            const razorpayRes = await axios.post(
-                `http://localhost:8080/api/orders/${orderId}/pay`,
+            const razorpayRes = await api.post(
+                `${BASE_URL}/api/orders/${orderId}/pay`,
                 {},
                 {
                     headers: {
@@ -66,8 +68,8 @@ const OrderForm = () => {
                     handler: async function (response) {
                         try {
                             // Step 4: Verify payment
-                            await axios.post(
-                                `http://localhost:8080/api/orders/${orderId}/verify`,
+                            await api.post(
+                                `${BASE_URL}/api/orders/${orderId}/verify`,
                                 {
                                     razorpay_order_id: response.razorpay_order_id,
                                     razorpay_payment_id: response.razorpay_payment_id,

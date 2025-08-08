@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table, Alert, Spinner, Button, Card, Container, Row, Col, Badge, Collapse } from 'react-bootstrap';
 import AddressForm from './AddressForm'; // ✅ Import the new component
+import BASE_URL from '../config';
+import api from '../services/api';
 
 const CustomerDashboard = () => {
     const [orders, setOrders] = useState([]);
@@ -16,7 +18,7 @@ const CustomerDashboard = () => {
     const fetchOrders = async () => {
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get('http://localhost:8080/api/orders/my', {
+            const response = await api.get(`${BASE_URL}/api/orders/my`, {
                 headers: {
                     Authorization: token.startsWith('Bearer') ? token : `Bearer ${token}`
                 }
@@ -38,8 +40,8 @@ const CustomerDashboard = () => {
     const handleCancel = async (orderId) => {
         const token = localStorage.getItem('token');
         try {
-            await axios.post(
-                `http://localhost:8080/api/orders/${orderId}/cancel`,
+            await api.post(
+                `${BASE_URL}/api/orders/${orderId}/cancel`,
                 {},
                 {
                     headers: {
@@ -65,7 +67,7 @@ const CustomerDashboard = () => {
     const downloadReceipt = async (orderId) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get(`http://localhost:8080/api/orders/${orderId}/receipt`, {
+            const response = await api.get(`${BASE_URL}/api/orders/${orderId}/receipt`, {
                 responseType: 'blob',
                 headers: {
                     Authorization: token.startsWith('Bearer') ? token : `Bearer ${token}`

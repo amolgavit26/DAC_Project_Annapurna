@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert, Card, InputGroup } from 'react-bootstrap';
 import axios from 'axios';
+import BASE_URL from '../config';
+import api from '../services/api';
 
 const AddTiffin = () => {
     const [formData, setFormData] = useState({
@@ -55,8 +57,8 @@ const AddTiffin = () => {
         }
 
         try {
-            await axios.post(
-                'http://localhost:8080/api/vendor/tiffins',
+            await api.post(
+                `${BASE_URL}/api/vendor/tiffins`,
                 data,
                 {
                     headers: {

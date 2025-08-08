@@ -15,6 +15,9 @@ import {
 } from 'react-bootstrap';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BASE_URL from '../config';
+import api from '../services/api';
+
 
 const AdminDashboard = () => {
     const [customers, setCustomers] = useState([]);
@@ -37,7 +40,7 @@ const AdminDashboard = () => {
 
     const fetchCustomers = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/admin/customers', {
+            const res = await api.get(`${BASE_URL}/api/admin/customers`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setCustomers(res.data);
@@ -49,7 +52,7 @@ const AdminDashboard = () => {
 
     const fetchVendors = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/admin/vendors', {
+            const res = await api.get(`${BASE_URL}/api/admin/vendors`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setVendors(res.data);
@@ -61,7 +64,7 @@ const AdminDashboard = () => {
 
     const handleDeleteCustomer = async (customerId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/admin/delete/${customerId}`, {
+            await api.delete(`${BASE_URL}/api/admin/delete/${customerId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success("✅ Customer deleted successfully!");
@@ -74,7 +77,7 @@ const AdminDashboard = () => {
 
     const handleDeleteVendor = async (vendorId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/admin/vendor/delete/${vendorId}`, {
+            await api.delete(`${BASE_URL}/api/admin/vendor/delete/${vendorId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success("✅ Vendor deleted successfully!");

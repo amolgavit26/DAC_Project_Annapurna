@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
-     const navigate = useNavigate();
+    const navigate = useNavigate();
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -805,21 +805,21 @@ const Home = () => {
                                     🌟 Most Trusted Tiffin Service in City
                                 </span>
                             </div>
-                            
+
                             <h1 className="display-3 fw-bold mb-4 animated-subtitle" style={{ lineHeight: '1.1' }}>
                                 Welcome to <br />
                                 <span className="gradient-text">
                                     Annapurna 🍱
                                 </span>
                             </h1>
-                            
+
                             <p className="lead mb-4 animated-description" style={{ fontSize: '1.4rem', opacity: 0.95 }}>
                                 Your trusted online tiffin service platform, connecting you with hygienic,
                                 affordable, and home-cooked meals delivered fresh to your doorstep.
                             </p>
-                            
+
                             <p className="mb-5 animated-description" style={{ opacity: 0.85, fontSize: '1.1rem' }}>
-                                Whether you're a student, working professional, or just looking for quality meals, 
+                                Whether you're a student, working professional, or just looking for quality meals,
                                 we've got delicious options crafted with love and care.
                             </p>
 
@@ -858,16 +858,16 @@ const Home = () => {
                                     <div className="food-item">🍲</div>
                                     <div className="food-item">🥗</div>
                                 </div>
-                                
+
                                 <div className="central-tiffin">🍱</div>
-                                
+
                                 <div className="sparkle" style={{ top: '15%', left: '25%' }}>✨</div>
                                 <div className="sparkle" style={{ top: '70%', right: '20%' }}>⭐</div>
                                 <div className="sparkle" style={{ bottom: '30%', left: '20%' }}>💫</div>
                                 <div className="sparkle" style={{ top: '30%', right: '25%' }}>🌟</div>
                                 <div className="sparkle" style={{ top: '50%', left: '15%' }}>✨</div>
                                 <div className="sparkle" style={{ bottom: '50%', right: '15%' }}>⭐</div>
-                                
+
                                 <div className="card position-absolute floating-info-card">
                                     <div className="card-body p-4 text-center">
                                         <h6 className="mb-2 text-success fw-bold">🔥 Fresh Today!</h6>
@@ -899,10 +899,10 @@ const Home = () => {
                             <div className="col-md-6 col-lg-3" key={index}>
                                 <div className="card feature-card text-center h-100">
                                     <div className="card-body p-4">
-                                        <div 
-                                            className="feature-icon mb-3" 
-                                            style={{ 
-                                                background: `linear-gradient(135deg, ${feature.color}, ${feature.color}99)` 
+                                        <div
+                                            className="feature-icon mb-3"
+                                            style={{
+                                                background: `linear-gradient(135deg, ${feature.color}, ${feature.color}99)`
                                             }}
                                         >
                                             <span style={{ position: 'relative', zIndex: 2 }}>{feature.icon}</span>
@@ -938,10 +938,10 @@ const Home = () => {
                                         </div>
                                         <p className="mb-3 fst-italic">"{testimonial.text}"</p>
                                         <div className="d-flex align-items-center justify-content-center">
-                                            <div 
-                                                className="rounded-circle d-flex align-items-center justify-content-center me-3" 
-                                                style={{ 
-                                                    width: '50px', 
+                                            <div
+                                                className="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                                style={{
+                                                    width: '50px',
                                                     height: '50px',
                                                     background: 'linear-gradient(135deg, #667eea, #764ba2)',
                                                     color: 'white'
@@ -973,16 +973,16 @@ const Home = () => {
                                 Start your journey to delicious, healthy eating today!
                             </p>
                             <div className="d-flex justify-content-center gap-4 flex-wrap">
-                                <button 
-                                    className="btn btn-light btn-lg px-5 py-3 btn-animated fw-bold" 
-                                    style={{ 
-                                        
+                                <button
+                                    className="btn btn-light btn-lg px-5 py-3 btn-animated fw-bold"
+                                    style={{
+
                                         background: 'linear-gradient(45deg, #FFD700, #FFA500)',
                                         border: 'none',
                                         color: '#000'
-                                        
+
                                     }}
-                               onClick={() => navigate('/register')} >
+                                    onClick={() => navigate('/register')} >
                                     Get Started Today
                                 </button>
                                 <button className="btn btn-outline-light btn-lg px-5 py-3 btn-animated fw-bold" onClick={() => navigate('/tiffins')}>

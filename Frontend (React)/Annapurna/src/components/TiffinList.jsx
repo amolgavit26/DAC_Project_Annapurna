@@ -16,6 +16,8 @@ import {
     Spinner
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from '../config';
+import api from '../services/api';
 
 const TiffinList = () => {
     const [tiffins, setTiffins] = useState([]);
@@ -31,25 +33,59 @@ const TiffinList = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const roleStored = localStorage.getItem('role') || '';
-        setRole(roleStored);
+    const roleStored = (localStorage.getItem('role') || '').toString();
+    setRole(roleStored);
 
-        const fetchTiffins = async () => {
-            try {
-                setLoading(true);
-                const res = await axios.get('http://localhost:8080/api/tiffin/all');
-                setTiffins(res.data);
-                setFilteredTiffins(res.data);
-            } catch (err) {
-                console.error(err);
-                setError('Failed to load tiffins');
-            } finally {
-                setLoading(false);
+    const fetchTiffins = async () => {
+        const base = `${BASE_URL}`;
+        const token = localStorage.getItem('token') || '';
+        const isCustomer = roleStored.toUpperCase() === 'CUSTOMER';
+
+        // Decide endpoint based on role
+        const url = isCustomer ? `${base}/api/tiffin/all` : `${base}/api/tiffin/all-tiffins`;
+
+        try {
+            setLoading(true);
+
+            // If customer but no token -> ask to login
+            if (isCustomer && !token) {
+                setTiffins([]);
+                setFilteredTiffins([]);
+                setError('NO_TOKEN');
+                return;
             }
-        };
 
-        fetchTiffins();
-    }, []);
+            // Build headers only if token present
+            const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+            const res = await api.get(url, { headers });
+            setTiffins(res.data || []);
+            setFilteredTiffins(res.data || []);
+            setError('');
+        } catch (err) {
+            console.error('Error fetching tiffins:', err);
+            const status = err?.response?.status;
+
+            // treat 401/403 as need-login for customer
+            if (status === 401 || status === 403) {
+                setError('NO_TOKEN');
+            } else {
+                const serverMsg = err?.response?.data?.message || err?.response?.data || err?.message;
+                setError(typeof serverMsg === 'string' ? serverMsg : 'Failed to load tiffins');
+            }
+
+            // keep tiffin lists empty on failure
+            setTiffins([]);
+            setFilteredTiffins([]);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    fetchTiffins();
+}, []);
+
+
 
     useEffect(() => {
         let result = [...tiffins];
@@ -270,8 +306,8 @@ const TiffinList = () => {
 
             {error && (
                 <Alert variant="danger" className="shadow-sm border-0 rounded-3">
-                    <Alert.Heading>Oops! Something went wrong</Alert.Heading>
-                    {error}
+                    <Alert.Heading>Please register/login to see tiffins near you..!!</Alert.Heading>
+                
                 </Alert>
             )}
 
@@ -350,7 +386,7 @@ const TiffinList = () => {
                                         </Button>
                                     </th>
                                     <th className="border-0 py-3 fw-semibold text-muted">Vendor</th>
-                                    {role.toUpperCase() === 'CUSTOMER' && (
+                                    {(role || '').toUpperCase() === 'CUSTOMER' && (
                                         <th className="border-0 py-3 fw-semibold text-muted text-center">Action</th>
                                     )}
                                 </tr>

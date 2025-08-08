@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Alert, Spinner, Card, Row, Col, Badge } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { jwtDecode } from 'jwt-decode';
+import BASE_URL from '../config';
+import api from '../services/api';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -18,7 +20,7 @@ const Login = () => {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:8080/api/auth/login', {
+            const response = await api.post(`${BASE_URL}/api/auth/login`, {
                 email,
                 password
             });

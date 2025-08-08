@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Table, Form, Spinner, Badge, Card, Container, Row, Col } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BASE_URL from '../config';
+import api from '../services/api';
 
 const VendorOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -18,7 +20,7 @@ const VendorOrders = () => {
     const fetchOrders = async () => {
         setLoading(true);
         try {
-            const res = await axios.get('http://localhost:8080/api/vendor/orders', {
+            const res = await api.get(`${BASE_URL}/api/vendor/orders`, {
                 headers: {
                     Authorization: token.startsWith('Bearer') ? token : `Bearer ${token}`
                 }
@@ -43,8 +45,8 @@ const VendorOrders = () => {
         );
 
         try {
-            await axios.patch(
-                `http://localhost:8080/api/vendor/orders/${orderId}/status`,
+            await api.patch(
+                `${BASE_URL}/api/vendor/orders/${orderId}/status`,
                 { status: newStatus },
                 {
                     headers: {

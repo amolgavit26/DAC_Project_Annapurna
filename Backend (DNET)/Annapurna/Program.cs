@@ -1,63 +1,100 @@
-using Annapurna.Data;
-using Annapurna.Security;
-using Annapurna.Services;
-using Annapurna.Services.Interfaces;
-using Annapurna.Models.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using System.Text.Json.Serialization;
+using AnnapurnaAPI.Data;
+using AnnapurnaAPI.Services;
+using AnnapurnaAPI.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register EF Core with SQL Server
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Add services to the container.
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 
-// Register JWT and services
-builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
-var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+// Swagger/OpenAPI
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
+// CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+// Database connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Use SQL Server with Entity Framework
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtSettings.Issuer,
-            ValidAudience = jwtSettings.Audience,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"] ?? "your-secret-key")),
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? "annapurna",
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"] ?? "annapurna",
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
         };
     });
 
-builder.Services.AddScoped<JwtProvider>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddAuthorization();
 
-// Enum binding fix
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Register services
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<TiffinService>();
+builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<AddressService>();
+builder.Services.AddScoped<RazorpayService>();
+builder.Services.AddScoped<EmailService>();
+builder.Services.AddScoped<JwtService>();
 
 var app = builder.Build();
 
+// Swagger UI only in development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseRouting();
-app.UseAuthentication(); //  Must be before UseAuthorization
+app.UseHttpsRedirection();
+app.UseCors("AllowAll");
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
+
+// Create database and apply migrations
+try
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        context.Database.EnsureCreated();
+        Console.WriteLine("Database created successfully!");
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error creating database: {ex.Message}");
+    Console.WriteLine("Please ensure SQL Server LocalDB is running and accessible.");
+}
+
 app.Run();

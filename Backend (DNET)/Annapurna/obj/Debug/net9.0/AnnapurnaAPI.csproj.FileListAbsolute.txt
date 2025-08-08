@@ -1,0 +1,350 @@
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.csproj.AssemblyReference.cache
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.AssemblyInfoInputs.cache
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.AssemblyInfo.cs
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.csproj.CoreCompileInputs.cache
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\appsettings.Development.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\appsettings.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.staticwebassets.endpoints.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.exe
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.deps.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.runtimeconfig.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.pdb
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Azure.Core.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Azure.Identity.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\BCrypt.Net-Next.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Humanizer.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\itextsharp.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\BouncyCastle.Crypto.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Razorpay.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.ClientModel.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.CodeDom.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Drawing.Common.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Formats.Asn1.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Memory.Data.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Security.Permissions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Text.Json.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\System.Windows.Extensions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\scopedcss\bundle\AnnapurnaAPI.styles.css
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.build.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.development.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\Annapurn.7C1DCB84.Up2Date
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\refint\AnnapurnaAPI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.pdb
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.genruntimeconfig.cache
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\ref\AnnapurnaAPI.dll
+E:\DAC\Temp\Project\P2 - Copy (4)\Annapurna.NET\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\appsettings.Development.json
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\appsettings.json
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.staticwebassets.endpoints.json
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.exe
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.deps.json
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.runtimeconfig.json
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\AnnapurnaAPI.pdb
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Azure.Core.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Azure.Identity.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\BCrypt.Net-Next.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Humanizer.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\itextsharp.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\BouncyCastle.Crypto.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Razorpay.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.ClientModel.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.CodeDom.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Drawing.Common.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Formats.Asn1.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Memory.Data.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Security.Permissions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Text.Json.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\System.Windows.Extensions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.csproj.AssemblyReference.cache
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.AssemblyInfoInputs.cache
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.AssemblyInfo.cs
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.csproj.CoreCompileInputs.cache
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\scopedcss\bundle\AnnapurnaAPI.styles.css
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.build.json
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.development.json
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\Annapurn.7C1DCB84.Up2Date
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\refint\AnnapurnaAPI.dll
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.pdb
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\AnnapurnaAPI.genruntimeconfig.cache
+E:\DAC\Temp\Project\AnnapurnaAPI\obj\Debug\net9.0\ref\AnnapurnaAPI.dll

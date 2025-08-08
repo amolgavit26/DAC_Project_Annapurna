@@ -1,58 +1,78 @@
-﻿using Annapurna.Models.Requests;
-using Annapurna.Models.Responses;
-using Annapurna.Security;
-using Annapurna.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using AnnapurnaAPI.Services;
+using AnnapurnaAPI.Security;
+using AnnapurnaAPI.DTOs;
+using AnnapurnaAPI.Models;
 
-namespace Annapurna.Controllers
+namespace AnnapurnaAPI.Controllers
 {
     [ApiController]
-    [Route("auth")]
+    [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly IUserService _userService;
-        private readonly JwtProvider _jwtProvider;
+        private readonly UserService _userService;
+        private readonly JwtService _jwtService;
 
-        public AuthController(IUserService userService, JwtProvider jwtProvider)
+        public AuthController(UserService userService, JwtService jwtService)
         {
             _userService = userService;
-            _jwtProvider = jwtProvider;
+            _jwtService = jwtService;
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterRequest request)
+        public async Task<IActionResult> Register([FromBody] UserDTO dto)
         {
-            if (await _userService.EmailExistsAsync(request.Email))
-                return BadRequest("Email already in use");
-
-            // Register user and get the actual User entity (not UserResponse)
-            var user = await _userService.RegisterAsync(request);
-
-            var token = _jwtProvider.GenerateToken(user);
-
-            return Ok(new LoginResponse
+            try
             {
-                Token = token,
-                Role = user.Role.ToString(),
-                UserId = user.Id
-            });
+                // Register user with DTO (Role is now directly an enum)
+                var user = await _userService.RegisterUser(dto);
+
+                // Convert the User to UserResponseDTO using the static method
+                var response = UserResponseDTO.FromUser(user);
+
+                return Ok(response);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
+
+
+
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginDTO dto)
         {
-            var user = await _userService.AuthenticateAsync(request);
-            if (user == null)
-                return Unauthorized("Invalid email or password");
-
-            var token = _jwtProvider.GenerateToken(user);
-
-            return Ok(new LoginResponse
+            try
             {
-                Token = token,
-                Role = user.Role.ToString(),
-                UserId = user.Id
-            });
+                var isValid = await _userService.ValidatePassword(dto.Email, dto.Password);
+                if (!isValid)
+                {
+                    return BadRequest(new { message = "Invalid credentials" });
+                }
+
+                var user = await _userService.GetUserByEmail(dto.Email);
+                if (user == null)
+                {
+                    return BadRequest(new { message = "User not found" });
+                }
+
+                var token = _jwtService.GenerateToken(user.Email, user.Role.ToString());
+
+                return Ok(new
+                {
+                    token = $"Bearer {token}",
+                    userId = user.Id,
+                    email = user.Email,
+                    fullName = user.FullName,
+                    role = user.Role.ToString()
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
     }
 }

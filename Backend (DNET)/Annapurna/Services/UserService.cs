@@ -1,86 +1,103 @@
-﻿using Annapurna.Data;
-using Annapurna.Models.Entities;
-using Annapurna.Models.Requests;
 using Microsoft.EntityFrameworkCore;
-using Annapurna.Services.Interfaces;
+using AnnapurnaAPI.Data;
+using AnnapurnaAPI.Models;
+using AnnapurnaAPI.DTOs;
+using BCrypt.Net;
 
-namespace Annapurna.Services
+namespace AnnapurnaAPI.Services
 {
-    public class UserService : IUserService
+    public class UserService
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UserService(AppDbContext context)
+        public UserService(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task<User> AuthenticateAsync(LoginRequest request)
+        public async Task<User> RegisterUser(UserDTO dto)
         {
-            var user = await _context.Users
-                .Include(u => u.Address)
-                .FirstOrDefaultAsync(u => u.Email == request.Email);
-
-            if (user == null || user.Password != request.Password)
+            // Check if user already exists
+            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
+            if (existingUser != null)
             {
-                throw new UnauthorizedAccessException("Invalid credentials.");
+                throw new InvalidOperationException("User with this email already exists");
             }
 
-            return user;
-        }
+            // Hash password
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(dto.Password);
 
-        public async Task<User> RegisterAsync(RegisterRequest request)
-        {
-            if (await EmailExistsAsync(request.Email))
+            // Instead of trying to parse, directly cast the role to the enum
+            if (!Enum.IsDefined(typeof(Role), dto.Role))
             {
-                throw new InvalidOperationException("Email already exists.");
+                throw new InvalidOperationException("Invalid role provided");
             }
 
+            Role role = (Role)dto.Role;  // Cast integer to Role enum
+
+            // Create user and optionally address
             var user = new User
             {
-                FullName = request.FullName,
-                Email = request.Email,
-                Password = request.Password,
-                MobileNumber = request.MobileNumber,
-                Role = request.Role
+                FullName = dto.FullName,
+                Email = dto.Email,
+                Password = hashedPassword,
+                Role = role,  // Ensure the Role is set as the enum (which will be saved as its int value)
+                MobileNumber = dto.MobileNumber,
+                Address = dto.Address != null ? new Address
+                {
+                    Street = dto.Address.Street,
+                    City = dto.Address.City,
+                    State = dto.Address.State,
+                    PinCode = dto.Address.PinCode,
+                    Country = dto.Address.Country
+                } : null
             };
 
             _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-
-            var address = new Address
-            {
-                Street = request.Street,
-                City = request.City,
-                State = request.State,
-                PinCode = request.PinCode,
-                Country = request.Country,
-                UserId = user.Id
-            };
-
-            _context.Addresses.Add(address);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); // saves user and address together
 
             return user;
         }
 
-        public async Task<bool> EmailExistsAsync(string email)
-        {
-            return await _context.Users.AnyAsync(u => u.Email == email);
-        }
 
-        public async Task<User?> GetUserByIdAsync(int id)
+
+
+
+
+        public async Task<User?> GetUserByEmail(string email)
         {
             return await _context.Users
                 .Include(u => u.Address)
-                .FirstOrDefaultAsync(u => u.Id == id);
+                .FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        public async Task SaveAsync()
+        public async Task<User?> GetByEmail(string email)
         {
-            await _context.SaveChangesAsync();
+            return await _context.Users
+                .Include(u => u.Address)
+                .FirstOrDefaultAsync(u => u.Email == email);
         }
 
+        public async Task<bool> ValidatePassword(string email, string password)
+        {
+            var user = await GetUserByEmail(email);
+            if (user == null) return false;
 
+            return BCrypt.Net.BCrypt.Verify(password, user.Password);
+        }
+
+        public async Task DeleteVendorById(long vendorId)
+        {
+            var vendor = await _context.Users
+                .Include(u => u.Tiffins)
+                .ThenInclude(t => t.Orders)
+                .FirstOrDefaultAsync(u => u.Id == vendorId && u.Role == Role.VENDOR);
+
+            if (vendor != null)
+            {
+                _context.Users.Remove(vendor);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

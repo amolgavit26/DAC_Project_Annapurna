@@ -25,7 +25,6 @@ public class TiffinService {
         return tiffinRepository.save(tiffin);
     }
 
-
     public void saveTiffin(Tiffin tiffin) {
         tiffinRepository.save(tiffin);
     }
@@ -41,9 +40,18 @@ public class TiffinService {
         return tiffinRepository.findByVendor(vendor);
     }
 
-    // Get all for customers
+    // Get all for customers (old method left for backward compatibility if needed,
+    // but prefer using getTiffinsForCustomer to filter by pinCode)
     public List<Tiffin> getAllTiffins() {
         return tiffinRepository.findAll();
+    }
+
+    // New: get tiffins for a customer by their pinCode (returns empty list if no pin)
+    public List<Tiffin> getTiffinsForCustomerByPinCode(String pinCode) {
+        if (pinCode == null || pinCode.isBlank()) {
+            return List.of();
+        }
+        return tiffinRepository.findByVendorAddressPinCode(pinCode);
     }
 
     // Delete by ID

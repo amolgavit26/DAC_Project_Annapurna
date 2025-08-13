@@ -71,15 +71,29 @@ https://github.com/amolgavit26/DAC_Project_Annapurna/tree/main/Backend%20(DNET)/
 
 Here’s how the website looks:
 
-![Home Page 1 Preview](HomePage1.png) 
-![Home Page 2 Preview](HomePage2.png) 
-![AllJobs Page Preview](AllJobs.png) 
-![Feedback Page Preview](Feedback.png) 
+![Home Page 1 Preview](Home1.png) 
+![Home Page 2 Preview](Home2.png) 
+![Home Page 3 Preview](Home3.png)  
 ![SignUp Page Preview](SignUp.png) 
-![SignIn Page Preview](SignIn.png) 
-![PostJob Page Preview](PostJob.png) 
-![EditJob Page Preview](EditJob.png) 
+![SignIn Page Preview](SignIn.png)
+
+
+![Tiffins List Preview](Tiffins.png)
+![Customer Dashboard Preview](CustomerDashboard.png)
+![Place Order Preview](Order.png)
+![Payment Preview](Payment.png)
+![Payment Receipt Preview](PaymentReceipt.png)
+
+
+![Vendor Dashboard 1 Preview](VendorDashboard1.png)
+![Vendor Dashboard 2 Preview](VendorDashboard2.png)
+![Vendor Add Tiffin Preview](VendorAddTiffin.png)
+![Vendo Orders Dashboard Preview](VendorOrdersDashboard.png)
+
+![Admin Dashboard Preview](AdminDashboard.png)
+
+![Contact Us Page Preview](ContactUs.png)
 ![About Us 1 Page Preview](AboutUs1.png)
 ![About Us 2 Page Preview](AboutUs2.png)
 
----
+

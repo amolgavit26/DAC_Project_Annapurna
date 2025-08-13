@@ -21,16 +21,16 @@ supporting three roles: **Customer**, **Vendor**, and **Admin**.
 
 ---
 
-## ⚙ Setup
+## ⚙ For Setup & More Details visit respective folder.
 ```bash
 # Frontend
-npm install && npm run dev
+https://github.com/amolgavit26/DAC_Project_Annapurna/tree/main/Frontend%20(React)/Annapurna
 
 # Spring Boot Backend
-mvn spring-boot:run
+https://github.com/amolgavit26/DAC_Project_Annapurna/tree/main/Backend%20(Springboot)
 
 # ASP.NET Core Backend
-dotnet run
+https://github.com/amolgavit26/DAC_Project_Annapurna/tree/main/Backend%20(DNET)/Annapurna
 ```
 
 ---
@@ -63,9 +63,23 @@ dotnet run
 
 ## 🗄 Database Schema
 
-![Database ER Diagram](ER_Diagram.png)
+![Database ER Diagram](ER.png)
 
 ---
 
-## 📄 License
-MIT License
+## 📸 Preview
+
+Here’s how the website looks:
+
+![Home Page 1 Preview](HomePage1.png) 
+![Home Page 2 Preview](HomePage2.png) 
+![AllJobs Page Preview](AllJobs.png) 
+![Feedback Page Preview](Feedback.png) 
+![SignUp Page Preview](SignUp.png) 
+![SignIn Page Preview](SignIn.png) 
+![PostJob Page Preview](PostJob.png) 
+![EditJob Page Preview](EditJob.png) 
+![About Us 1 Page Preview](AboutUs1.png)
+![About Us 2 Page Preview](AboutUs2.png)
+
+---

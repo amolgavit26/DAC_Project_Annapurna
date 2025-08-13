@@ -11,6 +11,8 @@ Annapurna Frontend is a **React.js**-based web application for a **Tiffin Servic
 - Place orders and track status.
 - Manage delivery addresses.
 - View order history.
+- Download receipt.
+- Receive updates via email.
 
 ### **For Vendors**
 - Add and manage tiffin listings with images.
@@ -83,8 +85,8 @@ Annapurna Frontend/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/annapurna-frontend.git
-   cd annapurna-frontend
+   git clone https://github.com/amolgavit26/DAC_Project_Annapurna.git
+   cd Frontend (React)/Annapurna
    ```
 
 2. **Install dependencies**
@@ -99,7 +101,7 @@ Annapurna Frontend/
    ```javascript
    export const API_BASE_URL = "http://localhost:8080"; // Spring Boot
    // or
-   export const API_BASE_URL = "http://localhost:5000"; // ASP.NET Core
+   export const API_BASE_URL = "http://localhost:7090"; // ASP.NET Core
    ```
 
 4. **Run the application**
@@ -110,19 +112,3 @@ Annapurna Frontend/
 5. **Access the app**
    - Open browser: `http://localhost:5173`
 
----
-
-## 📸 Screenshots
-
-*(Add screenshots of Home Page, Dashboard, Vendor Panel, and Admin Panel here)*
-
----
-
-## 🔗 Backend Repositories
-- [Annapurna Spring Boot Backend](#)
-- [Annapurna ASP.NET Core Backend](#)
-
----
-
-## 📜 License
-This project is licensed under the MIT License.

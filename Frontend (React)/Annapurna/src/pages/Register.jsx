@@ -22,12 +22,20 @@ const Register = () => {
         },
     });
 
+    const [emailValid, setEmailValid] = useState(true);
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+
+        if (name === 'email') {
+            setEmailValid(validateEmail(value));
+        }
 
         if (name.startsWith('address.')) {
             const addressField = name.split('.')[1];
@@ -47,37 +55,44 @@ const Register = () => {
     };
 
     const handleRegister = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+        e.preventDefault();
+        setIsSubmitting(true);
 
-    try {
-        console.log('Form Data:', formData); // Log form data to inspect it before submission
-        const response = await api.post(`${BASE_URL}/api/auth/register`, formData);
-        setMessage('Registration successful! You can now login.');
-        setError('');
-        // Clear form on successful registration
-        setFormData({
-            fullName: '',
-            email: '',
-            password: '',
-            mobileNumber: '',
-            role: 'CUSTOMER',
-            address: {
-                street: '',
-                city: '',
-                state: '',
-                pinCode: '',
-                country: '',
-            },
-        });
-    } catch (err) {
-        console.error('Error Response:', err); // Log the error response
-        setError(err.response?.data?.message || 'Registration failed. Please try again.');
-        setMessage('');
-    } finally {
-        setIsSubmitting(false);
-    }
-};
+        try {
+            const response = await api.post(`${BASE_URL}/api/auth/register`, formData);
+            setMessage('Registration successful! You can now login.');
+            setError('');
+            setFormData({
+                fullName: '',
+                email: '',
+                password: '',
+                mobileNumber: '',
+                role: 'CUSTOMER',
+                address: {
+                    street: '',
+                    city: '',
+                    state: '',
+                    pinCode: '',
+                    country: '',
+                },
+            });
+        } catch (err) {
+            const backendMessage = err.response?.data?.message || err.response?.data || '❌ Registration failed';
+            console.error('Error Response:', err);
+
+            // ✅ Show custom message if duplicate email
+            if (backendMessage.includes('Email already exists')) {
+                setError('❌ This email is already registered. Please use a different one.');
+            } else {
+                setError(backendMessage);
+            }
+
+            setMessage('');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
 
 
 
@@ -139,8 +154,8 @@ const Register = () => {
             <Container fluid>
                 <Row className="justify-content-center w-100 m-0">
                     <Col xs={12} sm={11} md={10} lg={8} xl={7}>
-                        <Card 
-                            style={{ 
+                        <Card
+                            style={{
                                 background: 'rgba(255, 255, 255, 0.12)',
                                 backdropFilter: 'blur(25px)',
                                 borderRadius: '24px',
@@ -171,7 +186,7 @@ const Register = () => {
                             />
 
                             {/* Premium Header Section */}
-                            <div 
+                            <div
                                 style={{
                                     background: 'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
                                     padding: '30px 30px 25px',
@@ -191,8 +206,8 @@ const Register = () => {
                                 >
                                     🚀
                                 </div>
-                                <h2 style={{ 
-                                    margin: 0, 
+                                <h2 style={{
+                                    margin: 0,
                                     fontWeight: '700',
                                     fontSize: '1.8rem',
                                     background: 'linear-gradient(135deg, #fff, rgba(255,255,255,0.8))',
@@ -203,10 +218,10 @@ const Register = () => {
                                 }}>
                                     Join Our Community
                                 </h2>
-                                <Badge 
-                                    bg="light" 
+                                <Badge
+                                    bg="light"
                                     text="dark"
-                                    style={{ 
+                                    style={{
                                         marginTop: '8px',
                                         padding: '6px 12px',
                                         fontSize: '0.8rem',
@@ -222,9 +237,9 @@ const Register = () => {
 
                             <Card.Body style={{ padding: '30px' }}>
                                 {message && (
-                                    <Alert 
-                                        variant="success" 
-                                        style={{ 
+                                    <Alert
+                                        variant="success"
+                                        style={{
                                             borderRadius: '16px',
                                             border: 'none',
                                             background: 'linear-gradient(135deg, rgba(25, 135, 84, 0.1), rgba(25, 135, 84, 0.05))',
@@ -244,9 +259,9 @@ const Register = () => {
                                 )}
 
                                 {error && (
-                                    <Alert 
-                                        variant="danger" 
-                                        style={{ 
+                                    <Alert
+                                        variant="danger"
+                                        style={{
                                             borderRadius: '16px',
                                             border: 'none',
                                             background: 'linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.05))',
@@ -265,11 +280,13 @@ const Register = () => {
                                     </Alert>
                                 )}
 
+
+
                                 <Form onSubmit={handleRegister}>
                                     {/* Personal Information Section */}
                                     <div style={{ marginBottom: '25px' }}>
-                                        <h5 style={{ 
-                                            color: 'rgba(255,255,255,0.9)', 
+                                        <h5 style={{
+                                            color: 'rgba(255,255,255,0.9)',
                                             marginBottom: '15px',
                                             fontWeight: '600',
                                             display: 'flex',
@@ -278,12 +295,12 @@ const Register = () => {
                                             <span style={{ marginRight: '8px' }}>👤</span>
                                             Personal Information
                                         </h5>
-                                        
+
                                         <Row>
                                             <Col md={6}>
                                                 <Form.Group controlId="formFullName" className="mb-3">
-                                                    <Form.Label style={{ 
-                                                        fontWeight: '600', 
+                                                    <Form.Label style={{
+                                                        fontWeight: '600',
                                                         color: 'rgba(255,255,255,0.8)',
                                                         marginBottom: '8px'
                                                     }}>
@@ -322,8 +339,8 @@ const Register = () => {
                                             </Col>
                                             <Col md={6}>
                                                 <Form.Group controlId="formEmail" className="mb-3">
-                                                    <Form.Label style={{ 
-                                                        fontWeight: '600', 
+                                                    <Form.Label style={{
+                                                        fontWeight: '600',
                                                         color: 'rgba(255,255,255,0.8)',
                                                         marginBottom: '8px'
                                                     }}>
@@ -335,6 +352,7 @@ const Register = () => {
                                                         placeholder="Enter your email"
                                                         value={formData.email}
                                                         onChange={handleChange}
+                                                        isInvalid={!emailValid && formData.email.length > 0}
                                                         required
                                                         style={{
                                                             borderRadius: '12px',
@@ -358,15 +376,19 @@ const Register = () => {
                                                             e.target.style.boxShadow = 'none';
                                                         }}
                                                     />
+                                                    <Form.Control.Feedback type="invalid">
+                                                        Please enter a valid email address.
+                                                    </Form.Control.Feedback>
                                                 </Form.Group>
+
                                             </Col>
                                         </Row>
 
                                         <Row>
                                             <Col md={6}>
                                                 <Form.Group controlId="formPassword" className="mb-3">
-                                                    <Form.Label style={{ 
-                                                        fontWeight: '600', 
+                                                    <Form.Label style={{
+                                                        fontWeight: '600',
                                                         color: 'rgba(255,255,255,0.8)',
                                                         marginBottom: '8px'
                                                     }}>
@@ -379,6 +401,7 @@ const Register = () => {
                                                         value={formData.password}
                                                         onChange={handleChange}
                                                         required
+                                                        isInvalid={formData.password.length > 0 && formData.password.length < 6}
                                                         style={{
                                                             borderRadius: '12px',
                                                             border: '1px solid rgba(255,255,255,0.2)',
@@ -401,12 +424,15 @@ const Register = () => {
                                                             e.target.style.boxShadow = 'none';
                                                         }}
                                                     />
+                                                    <Form.Control.Feedback type="invalid">
+                                                        Password must be at least 6 characters long.
+                                                    </Form.Control.Feedback>
                                                 </Form.Group>
                                             </Col>
                                             <Col md={6}>
                                                 <Form.Group controlId="formMobileNumber" className="mb-3">
-                                                    <Form.Label style={{ 
-                                                        fontWeight: '600', 
+                                                    <Form.Label style={{
+                                                        fontWeight: '600',
                                                         color: 'rgba(255,255,255,0.8)',
                                                         marginBottom: '8px'
                                                     }}>
@@ -419,6 +445,7 @@ const Register = () => {
                                                         value={formData.mobileNumber}
                                                         onChange={handleChange}
                                                         required
+                                                        isInvalid={formData.mobileNumber.length > 0 && formData.mobileNumber.length < 10}
                                                         style={{
                                                             borderRadius: '12px',
                                                             border: '1px solid rgba(255,255,255,0.2)',
@@ -441,13 +468,16 @@ const Register = () => {
                                                             e.target.style.boxShadow = 'none';
                                                         }}
                                                     />
+                                                    <Form.Control.Feedback type="invalid">
+                                                        Please enter valid 10 Digit Mobile Number.
+                                                    </Form.Control.Feedback>
                                                 </Form.Group>
                                             </Col>
                                         </Row>
 
                                         <Form.Group controlId="formRole" className="mb-3">
-                                            <Form.Label style={{ 
-                                                fontWeight: '600', 
+                                            <Form.Label style={{
+                                                fontWeight: '600',
                                                 color: 'rgba(255,255,255,0.8)',
                                                 marginBottom: '8px'
                                             }}>
@@ -482,14 +512,14 @@ const Register = () => {
                                             >
                                                 <option value="CUSTOMER" style={{ background: '#333', color: 'white' }}>Customer</option>
                                                 <option value="VENDOR" style={{ background: '#333', color: 'white' }}>Vendor</option>
-                                                <option value="ADMIN" style={{ background: '#333', color: 'white' }}>Admin</option>
+                                                
                                             </Form.Select>
                                         </Form.Group>
                                     </div>
 
                                     {/* Address Information Section */}
-                                    <Card 
-                                        style={{ 
+                                    <Card
+                                        style={{
                                             marginBottom: '25px',
                                             background: 'rgba(255,255,255,0.05)',
                                             backdropFilter: 'blur(20px)',
@@ -497,7 +527,7 @@ const Register = () => {
                                             borderRadius: '16px'
                                         }}
                                     >
-                                        <Card.Header 
+                                        <Card.Header
                                             style={{
                                                 background: 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08))',
                                                 border: 'none',
@@ -505,8 +535,8 @@ const Register = () => {
                                                 padding: '15px 20px'
                                             }}
                                         >
-                                            <h5 style={{ 
-                                                margin: 0, 
+                                            <h5 style={{
+                                                margin: 0,
                                                 color: 'rgba(255,255,255,0.9)',
                                                 fontWeight: '600',
                                                 display: 'flex',
@@ -520,8 +550,8 @@ const Register = () => {
                                             <Row>
                                                 <Col md={8}>
                                                     <Form.Group controlId="formStreet" className="mb-3">
-                                                        <Form.Label style={{ 
-                                                            fontWeight: '600', 
+                                                        <Form.Label style={{
+                                                            fontWeight: '600',
                                                             color: 'rgba(255,255,255,0.8)',
                                                             marginBottom: '8px'
                                                         }}>
@@ -560,8 +590,8 @@ const Register = () => {
                                                 </Col>
                                                 <Col md={4}>
                                                     <Form.Group controlId="formPinCode" className="mb-3">
-                                                        <Form.Label style={{ 
-                                                            fontWeight: '600', 
+                                                        <Form.Label style={{
+                                                            fontWeight: '600',
                                                             color: 'rgba(255,255,255,0.8)',
                                                             marginBottom: '8px'
                                                         }}>
@@ -603,8 +633,8 @@ const Register = () => {
                                             <Row>
                                                 <Col md={6}>
                                                     <Form.Group controlId="formCity" className="mb-3">
-                                                        <Form.Label style={{ 
-                                                            fontWeight: '600', 
+                                                        <Form.Label style={{
+                                                            fontWeight: '600',
                                                             color: 'rgba(255,255,255,0.8)',
                                                             marginBottom: '8px'
                                                         }}>
@@ -643,8 +673,8 @@ const Register = () => {
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="formState" className="mb-3">
-                                                        <Form.Label style={{ 
-                                                            fontWeight: '600', 
+                                                        <Form.Label style={{
+                                                            fontWeight: '600',
                                                             color: 'rgba(255,255,255,0.8)',
                                                             marginBottom: '8px'
                                                         }}>
@@ -684,8 +714,8 @@ const Register = () => {
                                             </Row>
 
                                             <Form.Group controlId="formCountry" className="mb-3">
-                                                <Form.Label style={{ 
-                                                    fontWeight: '600', 
+                                                <Form.Label style={{
+                                                    fontWeight: '600',
                                                     color: 'rgba(255,255,255,0.8)',
                                                     marginBottom: '8px'
                                                 }}>
@@ -725,12 +755,12 @@ const Register = () => {
                                     </Card>
 
                                     <div className="d-grid gap-2 mb-4">
-                                        <Button 
-                                            variant="primary" 
-                                            type="submit" 
+                                        <Button
+                                            variant="primary"
+                                            type="submit"
                                             size="lg"
                                             disabled={isSubmitting}
-                                            style={{ 
+                                            style={{
                                                 background: 'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1))',
                                                 border: '1px solid rgba(255,255,255,0.3)',
                                                 borderRadius: '16px',
@@ -774,14 +804,14 @@ const Register = () => {
                                         </Button>
                                     </div>
 
-                                    <div 
-                                        className="text-center" 
-                                        style={{ 
+                                    <div
+                                        className="text-center"
+                                        style={{
                                             fontSize: '0.95rem',
                                             color: 'rgba(255, 255, 255, 0.42)'
                                         }}
                                     >
-                                        <div style={{ 
+                                        <div style={{
                                             padding: '20px',
                                             borderRadius: '12px',
                                             background: 'rgba(255,255,255,0.05)',
@@ -789,9 +819,9 @@ const Register = () => {
                                             border: '1px solid rgba(255,255,255,0.1)'
                                         }}>
                                             Already have an account?{' '}
-                                            <a 
-                                                href="/login" 
-                                                style={{ 
+                                            <a
+                                                href="/login"
+                                                style={{
                                                     color: '#fff',
                                                     textDecoration: 'none',
                                                     fontWeight: '600',

@@ -5117,11 +5117,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DAC\\Temp\\Project\\AnnapurnaAPI\\AnnapurnaAPI.csproj",
+      "projectUniqueName": "E:\\DAC\\Temp\\Project\\P2_DNET\\AnnapurnaAPI.csproj",
       "projectName": "AnnapurnaAPI",
-      "projectPath": "E:\\DAC\\Temp\\Project\\AnnapurnaAPI\\AnnapurnaAPI.csproj",
+      "projectPath": "E:\\DAC\\Temp\\Project\\P2_DNET\\AnnapurnaAPI.csproj",
       "packagesPath": "C:\\Users\\amolg\\.nuget\\packages\\",
-      "outputPath": "E:\\DAC\\Temp\\Project\\AnnapurnaAPI\\obj\\",
+      "outputPath": "E:\\DAC\\Temp\\Project\\P2_DNET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

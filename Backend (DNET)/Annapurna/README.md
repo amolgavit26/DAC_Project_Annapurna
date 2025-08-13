@@ -1,4 +1,4 @@
-# Annapurna Tiffin Delivery Service - ASP.NET Backend
+# Annapurna Tiffin Delivery Service - ASP.NET (Backend)
 
 ## 📌 Overview
 The **Annapurna Backend** is built using **ASP.NET Core Web API** for managing a Tiffin Delivery Service platform.  
@@ -43,6 +43,17 @@ Annapurna Backend (ASP.NET)/
 │   ├── Tiffin.cs
 │   ├── Vendor.cs
 │
+│── Security/
+│   ├── JwtService.cs  # JWT Token Configuration
+│
+│── Services/                # Business Logic
+│   ├── AddressService.cs
+│   ├── EmailService.cs
+│   ├── OrderService.cs
+│   ├── RazorpayService.cs
+│   ├── TiffinService.cs
+│   ├── UserService.cs
+│
 │── Program.cs              # Main entry point
 │── appsettings.json        # Application configuration
 │── AnnapurnaAPI.sln        # Solution file
@@ -55,7 +66,6 @@ Annapurna Backend (ASP.NET)/
 ## ⚙️ Technologies Used
 - **ASP.NET Core Web API**
 - **Entity Framework Core (EF Core)**
-- **SQLite** (Default DB, can be switched to SQL Server/MySQL)
 - **JWT Authentication**
 - **C# 10**
 
@@ -82,8 +92,8 @@ Annapurna Backend (ASP.NET)/
 ## 📦 Installation
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/annapurna-backend.git
-cd annapurna-backend
+git clone https://github.com/amolgavit26/DAC_Project_Annapurna.git
+cd Backend (DNET)/Annapurna
 ```
 
 2. **Install dependencies**
@@ -124,7 +134,4 @@ Authorization: Bearer <your_token_here>
 ```
 - Passwords are hashed before storage.
 
----
 
-## 📄 License
-This project is licensed under the MIT License.

@@ -1,21 +1,7 @@
-# Annapurna Backend (Spring Boot)
+# Annapurna Tiffin Delivery Service - SpringBoot (Backend)
 
-The **Annapurna Backend** is a Spring Boot REST API that powers the Annapurna food delivery and tiffin service platform.  
+The **Annapurna** is a Spring Boot REST API that powers the Annapurna food delivery and tiffin service platform.  
 It is designed to handle **user authentication, vendor management, order processing, tiffin listings, and payment tracking**.
-
----
-
-## 📖 Table of Contents
-1. [Features](#-features)
-2. [Architecture](#-architecture)
-3. [Project Structure](#-project-structure)
-4. [Technologies Used](#-technologies-used)
-5. [Setup & Installation](#-setup--installation)
-6. [Environment Configuration](#-environment-configuration)
-7. [API Endpoints](#-api-endpoints)
-8. [Security](#-security)
-9. [Database Schema](#-database-schema)
-10. [License](#-license)
 
 ---
 
@@ -34,7 +20,8 @@ It is designed to handle **user authentication, vendor management, order process
   - Add and manage multiple delivery addresses
 - **Payment Tracking**
   - Payment status tracking for orders
-
+- **Receipt Download**
+  - Customer and download the receipt(.pdf) of his order.
 ---
 
 ## 🏛 Architecture
@@ -74,7 +61,7 @@ src/main/java/com/annapurna
 
 ## 🛠 Technologies Used
 
-- **Java 17**
+- **Java 21**
 - **Spring Boot**
 - **Spring Security (JWT)**
 - **Spring Data JPA / Hibernate**
@@ -87,18 +74,18 @@ src/main/java/com/annapurna
 ## ⚙ Setup & Installation
 
 ### Prerequisites
-- Java 17+
+- Java 21+
 - Maven 3.8+
 - MySQL database
 
 ### Steps
 ```bash
 # 1. Clone the repository
-git clone <repo-url>
-cd annapurna-backend
+git clone https://github.com/amolgavit26/DAC_Project_Annapurna.git
+cd Backend (Springboot)
 
 # 2. Configure database connection
-# (edit application.properties or .env)
+# (edit .env)
 
 # 3. Build and run
 mvn clean install
@@ -109,19 +96,19 @@ mvn spring-boot:run
 
 ## 🌍 Environment Configuration
 
-The application uses `.env` or `application.properties` for configuration.
+The application uses `.env` for configuration.
 
-Example `application.properties`:
+Example `.env`:
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/annapurna
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+DB_USERNAME=root
+DB_PASSWORD=root
+JWT_SECRET=@abcdefghijklmn#123456zxvdgt
+MAIL_USERNAME=amolgavit158121@gmail.com
+MAIL_PASSWORD=abcd efgh ijkl mnop
 
-# JWT Configuration
-jwt.secret=YourSecretKey
-jwt.expiration=86400000
+razorpay.key_id=rzp_test_XdrtDU2pZqIo
+razorpay.key_secret=hdTdsjyHKsyjsAuj7xN5WcY1jcK
+
 ```
 
 ---
@@ -156,8 +143,3 @@ jwt.expiration=86400000
 - **addresses** → Customer delivery addresses
 - **vendors** → Vendor information
 
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.

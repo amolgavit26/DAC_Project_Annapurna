@@ -141,5 +141,4 @@ razorpay.key_secret=hdTdsjyHKsyjsAuj7xN5WcY1jcK
 - **tiffins** → Tiffin service listings
 - **orders** → Order records with status
 - **addresses** → Customer delivery addresses
-- **vendors** → Vendor information
 

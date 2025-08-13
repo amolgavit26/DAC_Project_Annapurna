@@ -16,7 +16,7 @@ public class OrderResponseDTO {
     private int quantity;
     private double totalPrice;
     private OrderStatus status;
-    private PaymentStatus paymentStatus; // ✅ added
+    private PaymentStatus paymentStatus; 
     private LocalDateTime orderTime;
-    private String razorpayOrderId;      // ✅ optional but useful
+    private String razorpayOrderId;      
 }

@@ -19,10 +19,10 @@ public class RazorpayService {
 
     public Order createOrder(int amountInPaise, String currency, String receipt) throws RazorpayException {
         JSONObject orderRequest = new JSONObject();
-        orderRequest.put("amount", amountInPaise); // Already in paise
+        orderRequest.put("amount", amountInPaise); 
         orderRequest.put("currency", currency);
         orderRequest.put("receipt", receipt);
-        orderRequest.put("payment_capture", 1); // Auto capture
+        orderRequest.put("payment_capture", 1); 
 
         return razorpayClient.orders.create(orderRequest);
     }

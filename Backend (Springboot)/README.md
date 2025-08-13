@@ -1,164 +1,163 @@
-# 🥗 Annapurna Tiffins - Backend (Spring Boot)
+# Annapurna Backend (Spring Boot)
 
-A RESTful backend service for Annapurna Tiffins — a tiffin ordering platform that handles user registration, tiffin listings, order management, and payment integration using Razorpay.
-
----
-
-## ✅ Features
-
-- 🔐 **JWT-based Authentication & Authorization**
-- 👥 **Role-based access** (`CUSTOMER`, `VENDOR`)
-- 🧾 **Order management & payment verification**
-- 💳 **Razorpay integration**
-- 🥘 **Tiffin creation, listing, and retrieval**
-- 📦 Built with **Spring Boot**, **Spring Data JPA**, and **MySQL**
+The **Annapurna Backend** is a Spring Boot REST API that powers the Annapurna food delivery and tiffin service platform.  
+It is designed to handle **user authentication, vendor management, order processing, tiffin listings, and payment tracking**.
 
 ---
 
-## ⚙️ Technologies Used
-
-| Purpose        | Technology              |
-|----------------|--------------------------|
-| Backend        | Spring Boot 3, Java 21    |
-| ORM & DB       | Spring Data JPA, MySQL    |
-| Auth           | Spring Security + JWT     |
-| Payment        | Razorpay REST API         |
-| Build Tool     | Maven                     |
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── controller/       # REST endpoints for users, orders, and tiffins
-├── domain/           # Entity classes (User, Tiffin, Order, Payment)
-├── dto/              # DTOs for data transfer
-├── repository/       # Spring Data JPA Repositories
-├── service/          # Business logic
-├── security/         # JWT Filter, Config, and Util
-└── resources/
-    └── application.properties
-```
+## 📖 Table of Contents
+1. [Features](#-features)
+2. [Architecture](#-architecture)
+3. [Project Structure](#-project-structure)
+4. [Technologies Used](#-technologies-used)
+5. [Setup & Installation](#-setup--installation)
+6. [Environment Configuration](#-environment-configuration)
+7. [API Endpoints](#-api-endpoints)
+8. [Security](#-security)
+9. [Database Schema](#-database-schema)
+10. [License](#-license)
 
 ---
 
-## 🔐 Authentication
+## ✨ Features
 
-- **Sign Up**: `/api/auth/signup`
-- **Login**: `/api/auth/login`  
-  Returns a **JWT token** which should be passed in `Authorization` header for protected endpoints:
-
-```
-Authorization: Bearer <your_token_here>
-```
-
----
-
-## 🔑 Role-Based Access
-
-| Role      | Can Do                                       |
-|-----------|----------------------------------------------|
-| CUSTOMER  | Browse tiffins, place orders, make payment   |
-| VENDOR    | Add tiffins, view/update customer orders     |
+- **Authentication & Authorization**
+  - JWT-based security for stateless authentication
+  - Role-based access control for `Admin`, `Vendor`, and `Customer`
+- **Tiffin Service Management**
+  - Add, update, delete, and fetch tiffin services
+- **Order Processing**
+  - Place orders, update status, track delivery
+- **Vendor Management**
+  - Vendor onboarding and service listing
+- **Address Management**
+  - Add and manage multiple delivery addresses
+- **Payment Tracking**
+  - Payment status tracking for orders
 
 ---
 
-## 🧾 Key REST Endpoints
+## 🏛 Architecture
 
-### Authentication
-- `POST /api/auth/signup` – Create account
-- `POST /api/auth/login` – Login and get token
+The backend follows a **layered architecture**:
+1. **Controller Layer** → Handles HTTP requests and responses
+2. **Service Layer** → Contains business logic
+3. **Repository Layer** → Handles database interactions using JPA/Hibernate
+4. **Config Layer** → Security, CORS, and application configurations
 
-### Tiffins
-- `GET /api/tiffins` – Get all tiffins (open)
-- `POST /api/tiffins` – Add new tiffin (vendor only)
-
-### Orders
-- `POST /api/orders/place` – Place an order (customer)
-- `POST /api/orders/{id}/pay` – Create Razorpay order
-- `POST /api/orders/{id}/verify` – Verify payment signature
-- `GET /api/customer/orders` – Customer’s own orders
-- `GET /api/vendor/orders` – Vendor's received orders
-- `PATCH /api/vendor/orders/{id}/status` – Update order status
+Data flow is **stateless** and relies on **JWT tokens** for authentication.
 
 ---
 
-## 🧠 Entity Overview
+## 📂 Project Structure
 
-### User
-```java
-id, name, email, password, role (CUSTOMER / VENDOR)
+```
+src/main/java/com/annapurna
+│
+├── config         # Security, CORS, and Web configurations
+├── controller     # REST Controllers for various modules
+├── domain         # Entity classes mapped to database tables
+├── repository     # Data access layer using Spring Data JPA
+├── service        # Business logic implementations
+└── util           # Utility/helper classes
 ```
 
-### Tiffin
-```java
-id, name, description, price, vendor (User)
-```
-
-### Order
-```java
-id, tiffin, customer, quantity, totalPrice, status (PENDING / ACCEPTED / DELIVERED / REJECTED)
-```
-
-### Payment
-```java
-id, razorpayOrderId, paymentId, signature, verified
-```
+**Key Controllers:**
+- `AuthController` → Handles login, registration, and authentication
+- `TiffinController` → CRUD operations for tiffin services
+- `OrderController` → Order placement and tracking
+- `VendorController` → Vendor-specific operations
+- `AdminController` → Admin-level management
+- `AddressController` → Address management
 
 ---
 
-## 🔧 Configuration
+## 🛠 Technologies Used
 
-Update the following in `src/main/resources/application.properties`:
-
-```properties
-# MySQL Config
-spring.datasource.url=jdbc:mysql://localhost:3306/annapurna
-spring.datasource.username=root
-spring.datasource.password=your_password
-
-# JPA Settings
-spring.jpa.hibernate.ddl-auto=update
-
-# JWT Secret
-jwt.secret=your_jwt_secret
-
-# Razorpay Credentials
-razorpay.key=your_razorpay_key
-razorpay.secret=your_razorpay_secret
-```
+- **Java 17**
+- **Spring Boot**
+- **Spring Security (JWT)**
+- **Spring Data JPA / Hibernate**
+- **MySQL**
+- **Maven**
+- **Lombok** (for reducing boilerplate code)
 
 ---
 
-## 🚀 Running the Backend
+## ⚙ Setup & Installation
 
-### Prerequisites:
-- MySQL running on port 3306
-- Java 21
-- Maven
+### Prerequisites
+- Java 17+
+- Maven 3.8+
+- MySQL database
 
-### Start:
-
+### Steps
 ```bash
+# 1. Clone the repository
+git clone <repo-url>
+cd annapurna-backend
+
+# 2. Configure database connection
+# (edit application.properties or .env)
+
+# 3. Build and run
 mvn clean install
 mvn spring-boot:run
 ```
 
-Server runs on: `http://localhost:8080`
-
 ---
 
-## 🧪 Testing
+## 🌍 Environment Configuration
 
-Basic unit/integration tests:
+The application uses `.env` or `application.properties` for configuration.
 
-```bash
-mvn test
+Example `application.properties`:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/annapurna
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# JWT Configuration
+jwt.secret=YourSecretKey
+jwt.expiration=86400000
 ```
 
 ---
 
-## 📬 Contact
+## 📡 API Endpoints
 
-Built with ❤️ by the Annapurna Tiffins backend team.
+| Endpoint                  | Method | Description | Role |
+|---------------------------|--------|-------------|------|
+| `/auth/register`          | POST   | Register a new user | Public |
+| `/auth/login`             | POST   | Authenticate user and return JWT | Public |
+| `/tiffins`                | GET    | Get all tiffin services | All |
+| `/orders`                 | POST   | Place a new order | Customer |
+| `/orders/{id}`            | GET    | Get order details | Customer |
+| `/admin/tiffins`          | POST   | Add a tiffin service | Admin |
+| `/vendor/tiffins`         | POST   | Vendor adds their tiffin service | Vendor |
+
+---
+
+## 🔒 Security
+
+- **JWT Authentication** for stateless security
+- **Role-Based Access Control** to restrict API access
+- **Password Encryption** using BCrypt
+
+---
+
+## 🗄 Database Schema (Main Tables)
+
+- **users** → Stores user details (with roles)
+- **tiffins** → Tiffin service listings
+- **orders** → Order records with status
+- **addresses** → Customer delivery addresses
+- **vendors** → Vendor information
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.

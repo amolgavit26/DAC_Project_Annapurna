@@ -28,7 +28,7 @@ public class TiffinController {
     
     @GetMapping("/all")
     public ResponseEntity<List<TiffinDTO>> allTiffins(@RequestHeader("Authorization") String authHeader) {
-        // Extract token (handles both "Bearer <token>" and raw token)
+        
         String token = authHeader != null && authHeader.startsWith("Bearer ")
                 ? authHeader.substring(7) : authHeader;
         String email = jwtProvider.getEmailFromToken(token);
@@ -41,15 +41,15 @@ public class TiffinController {
             throw new RuntimeException("Only customers can view tiffins.");
         }
 
-        // Use pinCode field from Address entity
+        
         String customerPincode = customer.getAddress() != null ? customer.getAddress().getPinCode() : null;
 
         List<Tiffin> tiffins;
         if (customerPincode == null || customerPincode.isBlank()) {
-            // fallback — if customer has no pincode, return empty (safe default)
+           
             tiffins = List.of();
         } else {
-            // Use service method which uses repository query to fetch matching vendor tiffins
+           
             tiffins = tiffinService.getTiffinsForCustomerByPinCode(customerPincode);
         }
 
@@ -66,7 +66,7 @@ public class TiffinController {
                 String base64 = Base64.getEncoder().encodeToString(tiffin.getImage());
                 dto.setImageUrl("data:image/jpeg;base64," + base64);
             } else {
-                dto.setImageUrl(tiffin.getImageUrl()); // fallback to imageUrl if saved
+                dto.setImageUrl(tiffin.getImageUrl());
             }
             return dto;
         }).toList();

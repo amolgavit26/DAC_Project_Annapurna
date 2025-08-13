@@ -22,22 +22,25 @@ public class UserService {
     private final OrderRepository orderRepository;
     private final AddressRepository addressRepository;
 
-    /**
-     * Register a new user along with their address.
-     */
+    
     @Transactional
     public User registerUser(UserDTO dto) {
+        
+        if (userRepository.findByEmail(dto.getEmail()).isPresent()) {
+            throw new RuntimeException("Email already exists");
+        }
+
         User user = User.builder()
                 .fullName(dto.getFullName())
                 .email(dto.getEmail())
                 .password(passwordEncoder.encode(dto.getPassword()))
                 .role(dto.getRole())
-                .mobileNumber(dto.getMobileNumber()) 
+                .mobileNumber(dto.getMobileNumber())
                 .build();
 
         User savedUser = userRepository.save(user);
 
-        // Handle embedded address
+        
         if (dto.getAddress() != null) {
             AddressDTO addressDTO = dto.getAddress();
             Address address = Address.builder()
@@ -54,7 +57,6 @@ public class UserService {
         return savedUser;
     }
 
-
     public User getByEmail(String email) {
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -65,9 +67,7 @@ public class UserService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
-    /**
-     * Delete a vendor and all their tiffins, orders, and address.
-     */
+    
     @Transactional
     public void deleteVendorById(Long vendorId) {
         User vendor = userRepository.findById(vendorId)
@@ -77,19 +77,19 @@ public class UserService {
             throw new RuntimeException("User is not a vendor.");
         }
 
-        // Delete all orders related to the vendor's tiffins
+        
         List<Tiffin> tiffins = tiffinRepository.findByVendor(vendor);
         for (Tiffin t : tiffins) {
             orderRepository.deleteByTiffin(t);
         }
 
-        // Delete tiffins
+       
         tiffinRepository.deleteAll(tiffins);
 
-        // Delete address
+        
         addressRepository.deleteByUser(vendor);
 
-        // Delete vendor
+        
         userRepository.delete(vendor);
     }
 }

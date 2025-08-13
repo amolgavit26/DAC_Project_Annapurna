@@ -157,7 +157,6 @@ public class VendorController {
         existing.setPrice(price);
         existing.setCategory(category);
 
-        // Optional: update image if provided
         if (image != null && !image.isEmpty()) {
             try {
                 existing.setImage(image.getBytes());

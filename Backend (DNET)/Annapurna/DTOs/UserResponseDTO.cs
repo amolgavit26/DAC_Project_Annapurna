@@ -8,10 +8,9 @@ namespace AnnapurnaAPI.DTOs
         public string FullName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string MobileNumber { get; set; } = string.Empty;
-        public string Role { get; set; } = string.Empty;  // Change this to string for role as text
+        public string Role { get; set; } = string.Empty;
         public AddressResponseDTO? Address { get; set; }
 
-        // Static method to map User to UserResponseDTO
         public static UserResponseDTO FromUser(User user)
         {
             return new UserResponseDTO
@@ -20,7 +19,7 @@ namespace AnnapurnaAPI.DTOs
                 FullName = user.FullName,
                 Email = user.Email,
                 MobileNumber = user.MobileNumber,
-                Role = user.Role.ToString(),  // Convert Role to string
+                Role = user.Role.ToString(),
                 Address = user.Address != null ? new AddressResponseDTO
                 {
                     Id = (int)user.Address.Id,

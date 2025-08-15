@@ -67,7 +67,6 @@ const Login = () => {
                 overflow: 'hidden'
             }}
         >
-            {/* Floating Orbs */}
             <div
                 style={{
                     position: 'absolute',
@@ -125,7 +124,6 @@ const Login = () => {
                             }}
                             className="login-card"
                         >
-                            {/* Animated Border */}
                             <div
                                 style={{
                                     position: 'absolute',
@@ -142,7 +140,6 @@ const Login = () => {
                                 className="card-glow"
                             />
 
-                            {/* Premium Header Section */}
                             <div 
                                 style={{
                                     background: 'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',

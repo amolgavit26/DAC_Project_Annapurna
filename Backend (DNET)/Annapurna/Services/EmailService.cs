@@ -37,7 +37,6 @@ namespace AnnapurnaAPI.Services
             }
             catch (Exception ex)
             {
-                // Log the error but don't throw to avoid breaking the main flow
                 Console.WriteLine($"Failed to send email: {ex.Message}");
             }
         }

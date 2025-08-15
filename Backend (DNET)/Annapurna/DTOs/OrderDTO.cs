@@ -2,8 +2,8 @@ namespace AnnapurnaAPI.DTOs
 {
     public class OrderDTO
     {
-        public long TiffinId { get; set; }     // changed
-        public long OrderId { get; set; }      // changed
+        public long TiffinId { get; set; }
+        public long OrderId { get; set; }
         public string TiffinName { get; set; } = string.Empty;
         public int Quantity { get; set; }
         public double TotalPrice { get; set; }

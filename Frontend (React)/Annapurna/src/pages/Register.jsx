@@ -1,4 +1,3 @@
-// src/pages/Register.jsx
 
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert, Card, Badge } from 'react-bootstrap';
@@ -80,7 +79,6 @@ const Register = () => {
             const backendMessage = err.response?.data?.message || err.response?.data || '❌ Registration failed';
             console.error('Error Response:', err);
 
-            // ✅ Show custom message if duplicate email
             if (backendMessage.includes('Email already exists')) {
                 setError('❌ This email is already registered. Please use a different one.');
             } else {
@@ -110,7 +108,6 @@ const Register = () => {
                 padding: '40px 0'
             }}
         >
-            {/* Floating Orbs */}
             <div
                 style={{
                     position: 'absolute',
@@ -168,7 +165,6 @@ const Register = () => {
                             }}
                             className="register-card"
                         >
-                            {/* Animated Border */}
                             <div
                                 style={{
                                     position: 'absolute',
@@ -185,7 +181,6 @@ const Register = () => {
                                 className="card-glow"
                             />
 
-                            {/* Premium Header Section */}
                             <div
                                 style={{
                                     background: 'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
@@ -283,7 +278,6 @@ const Register = () => {
 
 
                                 <Form onSubmit={handleRegister}>
-                                    {/* Personal Information Section */}
                                     <div style={{ marginBottom: '25px' }}>
                                         <h5 style={{
                                             color: 'rgba(255,255,255,0.9)',
@@ -517,7 +511,6 @@ const Register = () => {
                                         </Form.Group>
                                     </div>
 
-                                    {/* Address Information Section */}
                                     <Card
                                         style={{
                                             marginBottom: '25px',

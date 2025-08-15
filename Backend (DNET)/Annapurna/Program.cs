@@ -8,7 +8,6 @@ using AnnapurnaAPI.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -16,11 +15,9 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.WriteIndented = true;
     });
 
-// Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -31,14 +28,11 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Database connection string
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Use SQL Server with Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-// JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -57,7 +51,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// Register services
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<TiffinService>();
 builder.Services.AddScoped<OrderService>();
@@ -68,7 +61,6 @@ builder.Services.AddScoped<JwtService>();
 
 var app = builder.Build();
 
-// Swagger UI only in development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -81,7 +73,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-// Create database and apply migrations
 try
 {
     using (var scope = app.Services.CreateScope())

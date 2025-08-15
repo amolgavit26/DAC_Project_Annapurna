@@ -17,31 +17,27 @@ namespace AnnapurnaAPI.Services
 
         public async Task<User> RegisterUser(UserDTO dto)
         {
-            // Check if user already exists
             var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
             if (existingUser != null)
             {
                 throw new InvalidOperationException("User with this email already exists");
             }
 
-            // Hash password
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword(dto.Password);
 
-            // Instead of trying to parse, directly cast the role to the enum
             if (!Enum.IsDefined(typeof(Role), dto.Role))
             {
                 throw new InvalidOperationException("Invalid role provided");
             }
 
-            Role role = (Role)dto.Role;  // Cast integer to Role enum
+            Role role = (Role)dto.Role;
 
-            // Create user and optionally address
             var user = new User
             {
                 FullName = dto.FullName,
                 Email = dto.Email,
                 Password = hashedPassword,
-                Role = role,  // Ensure the Role is set as the enum (which will be saved as its int value)
+                Role = role,
                 MobileNumber = dto.MobileNumber,
                 Address = dto.Address != null ? new Address
                 {
@@ -54,7 +50,7 @@ namespace AnnapurnaAPI.Services
             };
 
             _context.Users.Add(user);
-            await _context.SaveChangesAsync(); // saves user and address together
+            await _context.SaveChangesAsync();
 
             return user;
         }

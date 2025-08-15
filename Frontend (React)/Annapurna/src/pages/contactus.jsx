@@ -14,7 +14,6 @@ export default function ContactUs() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Simulate successful submission
             setSuccess('Thank you for your inquiry! Our team will contact you within 24 hours to discuss your tiffin service requirements.');
             setError('');
             setForm({ name: '', email: '', message: '' });
@@ -27,7 +26,6 @@ export default function ContactUs() {
 
     return (
         <div className="contact-wrapper">
-            {/* Animated background elements */}
             <div className="floating-elements">
                 <div className="floating-circle circle-1"></div>
                 <div className="floating-circle circle-2"></div>
@@ -38,7 +36,6 @@ export default function ContactUs() {
 
             <div className="container">
                 <div className="row">
-                    {/* Form Card */}
                     <div className="col-form">
                         <div className="glass-card">
                             <div className="form-header">
@@ -114,7 +111,6 @@ export default function ContactUs() {
                         </div>
                     </div>
 
-                    {/* Contact Info */}
                     <div className="col-info">
                         <div className="glass-card info-card">
                             <h5 className="info-title">Contact Information</h5>
@@ -149,7 +145,6 @@ export default function ContactUs() {
                             </div>
                         </div>
 
-                        {/* Why Choose Us */}
                         <div className="glass-card">
                             <h5 className="info-title">Why Choose Our Tiffin Service?</h5>
                             <div className="feature-list">
@@ -315,11 +310,14 @@ export default function ContactUs() {
                 }
 
                 .col-info {
-                    flex: 0 0 350px;
+                    flex: 0 0 500px;
                     display: flex;
                     flex-direction: column;
-                    gap: 20px;
+                    gap: 10px;
                 }
+
+
+
 
                 .glass-card {
                     background: rgba(255, 255, 255, 0.25);
@@ -351,7 +349,7 @@ export default function ContactUs() {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin: 0 auto 20px;
+                    margin: 0px auto 20px;
                     backdrop-filter: blur(10px);
                     border: 1px solid rgba(255, 255, 255, 0.2);
                 }
@@ -509,7 +507,7 @@ export default function ContactUs() {
                 .contact-list {
                     display: flex;
                     flex-direction: column;
-                    gap: 20px;
+                    gap: 1px;
                 }
 
                 .contact-item {
@@ -563,7 +561,7 @@ export default function ContactUs() {
                 .feature-list {
                     display: flex;
                     flex-direction: column;
-                    gap: 15px;
+                    gap: 1px;
                 }
 
                 .feature-item {

@@ -24,10 +24,8 @@ namespace AnnapurnaAPI.Controllers
         {
             try
             {
-                // Register user with DTO (Role is now directly an enum)
                 var user = await _userService.RegisterUser(dto);
 
-                // Convert the User to UserResponseDTO using the static method
                 var response = UserResponseDTO.FromUser(user);
 
                 return Ok(response);

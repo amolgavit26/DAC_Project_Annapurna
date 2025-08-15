@@ -1,4 +1,3 @@
-// src/components/AddTiffin.jsx
 
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert, Card, InputGroup } from 'react-bootstrap';
@@ -31,7 +30,6 @@ const AddTiffin = () => {
         const file = e.target.files[0];
         setFormData(prev => ({ ...prev, image: file }));
         
-        // Create image preview
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -73,7 +71,6 @@ const AddTiffin = () => {
             setFormData({ name: '', description: '', price: '', category: 'BREAKFAST', image: null });
             setImagePreview(null);
             
-            // Reset file input
             const fileInput = document.querySelector('input[type="file"]');
             if (fileInput) fileInput.value = '';
             

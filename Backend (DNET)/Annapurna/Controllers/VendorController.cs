@@ -57,7 +57,6 @@ namespace AnnapurnaAPI.Controllers
         {
             try
             {
-                // Validate Category Enum
                 if (!Enum.IsDefined(typeof(TiffinCategory), category))
                 {
                     return BadRequest(new { message = "Invalid category value. Valid values are: 1 (BREAKFAST), 2 (LUNCH), 3 (DINNER)" });
@@ -65,28 +64,23 @@ namespace AnnapurnaAPI.Controllers
 
                 TiffinCategory parsedCategory = (TiffinCategory)category;
 
-                // Validate name and description
                 if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(description))
                 {
                     return BadRequest(new { message = "Name and description are required." });
                 }
 
-                // Fetch Vendor (User who is logged in)
                 var vendor = await GetCurrentVendor();
 
-                // Create the Tiffin object to save
                 var tiffin = new Tiffin
                 {
                     Name = name,
                     Description = description,
                     Price = price,
                     Category = parsedCategory,
-                    VendorId = vendor.Id  // This should be long, matching User.Id
+                    VendorId = vendor.Id
                 };
 
 
-
-                // Handle image upload
                 if (image != null && image.Length > 0)
                 {
                     using var memoryStream = new MemoryStream();
@@ -95,17 +89,14 @@ namespace AnnapurnaAPI.Controllers
                 }
                 else
                 {
-                    // Set to empty array instead of null to avoid database constraint issues
                     tiffin.Image = new byte[0];
                 }
 
-                // Set default ImageUrl if not provided
                 if (string.IsNullOrEmpty(tiffin.ImageUrl))
                 {
                     tiffin.ImageUrl = "";
                 }
 
-                // Save to database
                 _context.Tiffins.Add(tiffin);
                 await _context.SaveChangesAsync();
 
@@ -116,9 +107,6 @@ namespace AnnapurnaAPI.Controllers
                 return BadRequest(new { message = ex.Message, details = ex.InnerException?.Message });
             }
         }
-
-
-
 
 
 

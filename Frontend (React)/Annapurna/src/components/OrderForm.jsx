@@ -19,7 +19,6 @@ const OrderForm = () => {
         const token = localStorage.getItem('token');
 
         try {
-            // Step 1: Place the order
             const orderResponse = await api.post(
                 `${BASE_URL}/api/orders/place`,
                 { tiffinId: parseInt(tiffinId), quantity },
@@ -36,11 +35,9 @@ const OrderForm = () => {
 
             if (!orderId) throw new Error("Order ID missing in response");
 
-            // ✅ This line updated:
             setMessage(`✅ Order placed for "${orderData.tiffinName}"! Initializing payment...`);
             setError('');
 
-            // Step 2: Initiate Razorpay order
             const razorpayRes = await api.post(
                 `${BASE_URL}/api/orders/${orderId}/pay`,
                 {},
@@ -53,13 +50,12 @@ const OrderForm = () => {
 
             const razorpayData = razorpayRes.data;
 
-            // Step 3: Load Razorpay script
             const script = document.createElement('script');
             script.src = 'https://checkout.razorpay.com/v1/checkout.js';
 
             script.onload = () => {
                 const options = {
-                    key: 'rzp_test_OxwxzdrU2pZqIo', // Use your Razorpay test/live key
+                    key: 'rzp_test_OxwxzdrU2pZqIo',
                     amount: razorpayData.amount,
                     currency: razorpayData.currency,
                     name: 'Annapurna Tiffins',
@@ -67,7 +63,6 @@ const OrderForm = () => {
                     order_id: razorpayData.id,
                     handler: async function (response) {
                         try {
-                            // Step 4: Verify payment
                             await api.post(
                                 `${BASE_URL}/api/orders/${orderId}/verify`,
                                 {

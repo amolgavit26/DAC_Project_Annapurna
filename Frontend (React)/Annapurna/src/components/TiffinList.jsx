@@ -41,13 +41,11 @@ const TiffinList = () => {
         const token = localStorage.getItem('token') || '';
         const isCustomer = roleStored.toUpperCase() === 'CUSTOMER';
 
-        // Decide endpoint based on role
         const url = isCustomer ? `${base}/api/tiffin/all` : `${base}/api/tiffin/all-tiffins`;
 
         try {
             setLoading(true);
 
-            // If customer but no token -> ask to login
             if (isCustomer && !token) {
                 setTiffins([]);
                 setFilteredTiffins([]);
@@ -55,7 +53,6 @@ const TiffinList = () => {
                 return;
             }
 
-            // Build headers only if token present
             const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
             const res = await api.get(url, { headers });
@@ -66,7 +63,6 @@ const TiffinList = () => {
             console.error('Error fetching tiffins:', err);
             const status = err?.response?.status;
 
-            // treat 401/403 as need-login for customer
             if (status === 401 || status === 403) {
                 setError('NO_TOKEN');
             } else {
@@ -74,7 +70,6 @@ const TiffinList = () => {
                 setError(typeof serverMsg === 'string' ? serverMsg : 'Failed to load tiffins');
             }
 
-            // keep tiffin lists empty on failure
             setTiffins([]);
             setFilteredTiffins([]);
         } finally {
@@ -127,45 +122,37 @@ const TiffinList = () => {
         navigate(`/order-form/${id}`);
     };
 
-    // Fixed Quick Filter handlers
     const handleAllItems = () => {
         setSearchTerm('');
         setActiveCategory('ALL');
         setQuickFilterActive('all');
-        // This will trigger useEffect to show all tiffins
     };
 
     const handleUnder100 = () => {
         setSearchTerm('');
         setActiveCategory('ALL');
         setQuickFilterActive('under100');
-        // Filter will be applied in useEffect
     };
 
     const handlePremium = () => {
         setSearchTerm('');
         setActiveCategory('ALL');
         setQuickFilterActive('premium');
-        // Filter will be applied in useEffect
     };
 
     const handlePopularLunch = () => {
         setSearchTerm('');
         setActiveCategory('LUNCH');
         setQuickFilterActive('lunch');
-        // This will trigger useEffect to filter by LUNCH category
     };
 
-    // Enhanced useEffect to handle quick filters
     useEffect(() => {
         let result = [...tiffins];
 
-        // Apply category filter first
         if (activeCategory !== 'ALL') {
             result = result.filter(t => t.category === activeCategory);
         }
 
-        // Apply search term filter
         if (searchTerm.trim() !== '') {
             result = result.filter(t =>
                 (t.name?.toLowerCase().includes(searchTerm.toLowerCase()) || '') ||
@@ -173,14 +160,12 @@ const TiffinList = () => {
             );
         }
 
-        // Apply quick filter logic
         if (quickFilterActive === 'under100') {
             result = result.filter(t => t.price <= 100);
         } else if (quickFilterActive === 'premium') {
             result = result.filter(t => t.price >= 150);
         }
 
-        // Apply sorting
         result.sort((a, b) => sortOrder === 'asc' ? a.price - b.price : b.price - a.price);
 
         setFilteredTiffins(result);
@@ -322,7 +307,7 @@ const TiffinList = () => {
                             value={searchTerm}
                             onChange={(e) => {
                                 setSearchTerm(e.target.value);
-                                setQuickFilterActive(''); // Reset quick filter when searching
+                                setQuickFilterActive('');
                             }}
                             className="border-start-0 ps-0"
                             style={{fontSize: '1rem', borderColor: 'rgba(99, 102, 241, 0.2)'}}
@@ -348,7 +333,7 @@ const TiffinList = () => {
                         activeKey={activeCategory}
                         onSelect={(k) => {
                             setActiveCategory(k);
-                            setQuickFilterActive(''); // Reset quick filter when changing category
+                            setQuickFilterActive('');
                         }}
                         className="border-0"
                         justify
@@ -488,7 +473,6 @@ const TiffinList = () => {
                 </Card.Body>
             </Card>
 
-            {/* Stats Cards */}
             <Row className="mt-4 mb-4">
                 <Col md={3} sm={6} className="mb-3">
                     <Card className="border-0 shadow-sm h-100" style={{background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05))'}}>
@@ -532,7 +516,6 @@ const TiffinList = () => {
                 </Col>
             </Row>
 
-            {/* Quick Filters - FIXED */}
             {tiffins.length > 0 && (
                 <Card className="shadow-sm border-0 mb-4">
                     <Card.Body>

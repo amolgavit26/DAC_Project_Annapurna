@@ -20,7 +20,6 @@ namespace AnnapurnaAPI.Services
 
             if (existingAddress != null)
             {
-                // Update existing address
                 existingAddress.Street = addressDTO.Street;
                 existingAddress.City = addressDTO.City;
                 existingAddress.State = addressDTO.State;
@@ -29,7 +28,6 @@ namespace AnnapurnaAPI.Services
             }
             else
             {
-                // Create new address
                 var address = new Address
                 {
                     Street = addressDTO.Street,

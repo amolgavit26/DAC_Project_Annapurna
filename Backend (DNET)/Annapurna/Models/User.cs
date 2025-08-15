@@ -17,7 +17,6 @@ namespace AnnapurnaAPI.Models
 
         public Role Role { get; set; }
 
-        // Navigation properties
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
         public virtual ICollection<Tiffin> Tiffins { get; set; } = new List<Tiffin>();
         public virtual Address? Address { get; set; }

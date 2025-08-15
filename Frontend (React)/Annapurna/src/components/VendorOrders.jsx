@@ -37,7 +37,6 @@ const VendorOrders = () => {
     const handleStatusChange = async (orderId, newStatus) => {
         setStatusUpdating(orderId);
 
-        // 👇 Optimistically update UI BEFORE the backend responds
         setOrders((prevOrders) =>
             prevOrders.map((order) =>
                 order.orderId === orderId ? { ...order, status: newStatus } : order
@@ -60,8 +59,7 @@ const VendorOrders = () => {
             console.error(err);
             toast.error('Failed to update order status');
 
-            // Optional: rollback status on error
-            fetchOrders(); // Only if rollback needed
+            fetchOrders();
         } finally {
             setStatusUpdating(null);
         }
@@ -198,7 +196,6 @@ const VendorOrders = () => {
                     </Col>
                 </Row>
 
-                {/* Stats Cards */}
                 <Row className="mb-4">
                     <Col md={3}>
                         <Card className="stats-card text-center py-3">

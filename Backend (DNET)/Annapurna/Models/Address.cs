@@ -15,7 +15,6 @@ namespace AnnapurnaAPI.Models
 
         public long UserId { get; set; }
 
-        // Navigation property
         public virtual User User { get; set; } = null!;
     }
 }

@@ -11,9 +11,8 @@ namespace AnnapurnaAPI.Models
         public double TotalPrice { get; set; }
         public DateTime OrderTime { get; set; } = DateTime.UtcNow;
 
-        // Navigation properties
         public virtual User Customer { get; set; } = null!;
-        public long CustomerId { get; set; }  //  Changed to long
+        public long CustomerId { get; set; }
 
         public virtual Tiffin Tiffin { get; set; } = null!;
         public long TiffinId { get; set; }
@@ -21,7 +20,6 @@ namespace AnnapurnaAPI.Models
         public OrderStatus Status { get; set; } = OrderStatus.PENDING;
         public PaymentStatus PaymentStatus { get; set; } = PaymentStatus.PENDING;
 
-        // Razorpay fields
         public string? RazorpayOrderId { get; set; }
         public string? RazorpayReceipt { get; set; }
         public string? RazorpayStatus { get; set; }

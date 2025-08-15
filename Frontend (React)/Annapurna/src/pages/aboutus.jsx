@@ -21,7 +21,6 @@ export default function About() {
     customers: 0,
   });
 
-  // Counter animation effect
   useEffect(() => {
     const animateCounters = () => {
       const duration = 2000;
@@ -110,7 +109,6 @@ export default function About() {
 
   return (
     <div className="about-wrapper">
-      {/* Animated background elements */}
       <div className="floating-elements">
         <div className="floating-circle circle-1"></div>
         <div className="floating-circle circle-2"></div>
@@ -123,7 +121,6 @@ export default function About() {
       </div>
 
       <div className="container">
-        {/* Header Section */}
         <div className="header-section">
           <div className="icon-wrapper-main">
             <ChefHat size={48} className="header-icon" />
@@ -135,7 +132,6 @@ export default function About() {
           </p>
         </div>
 
-        {/* Story and Mission Section */}
         <div className="story-mission-section">
           <div className="story-column">
             <div className="content-card">
@@ -185,7 +181,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Stats Section */}
         <div className="stats-section">
           <div className="stats-grid">
             <div className="stat-card">
@@ -225,7 +220,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Team Section */}
         <div className="team-section">
           <h4 className="team-title">Meet Our Team</h4>
           <p className="team-subtitle">
@@ -252,11 +246,12 @@ export default function About() {
                     <a
                       href={member.linkedin}
                       className="social-link linkedin-link"
+                      target="_blank"
                     >
                       <Linkedin size={16} />
                       LinkedIn
                     </a>
-                    <a href={member.github} className="social-link github-link">
+                    <a href={member.github} className="social-link github-link" target="_blank">
                       <Github size={16} />
                       GitHub
                     </a>

@@ -196,7 +196,6 @@ const AdminDashboard = () => {
                 }}
             />
             
-            {/* Hero Section */}
             <div className="position-relative overflow-hidden hero-gradient" style={{minHeight: '200px'}}>
                 <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity: '0.1'}}>
                     <div style={{
@@ -231,7 +230,6 @@ const AdminDashboard = () => {
                     </Alert>
                 )}
 
-                {/* Stats Cards */}
                 <Row className="mb-4">
                     <Col md={6} className="mb-3">
                         <Card className="dashboard-card border-0 shadow-sm h-100">
@@ -253,7 +251,6 @@ const AdminDashboard = () => {
                     </Col>
                 </Row>
 
-                {/* Main Content */}
                 <Card className="shadow-sm border-0">
                     <Card.Body className="p-0">
                         <Tabs
@@ -442,7 +439,6 @@ const AdminDashboard = () => {
                     </Card.Body>
                 </Card>
 
-                {/* Summary Footer */}
                 <div className="text-center mt-4">
                     <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
                         <Badge className="px-3 py-2 rounded-pill" style={{background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: 'white'}}>

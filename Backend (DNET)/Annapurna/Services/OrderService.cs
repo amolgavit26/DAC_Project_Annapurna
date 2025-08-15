@@ -29,7 +29,7 @@ namespace AnnapurnaAPI.Services
             {
                 TiffinId = dto.TiffinId,
                 CustomerId = customer.Id,
-                Quantity = (int)dto.Quantity,  // Make sure you cast explicitly if it's a long
+                Quantity = (int)dto.Quantity,
                 TotalPrice = dto.TotalPrice,
                 OrderTime = DateTime.UtcNow,
                 Status = OrderStatus.PENDING,
@@ -115,14 +115,12 @@ namespace AnnapurnaAPI.Services
 
                 document.Open();
 
-                // Add title
                 Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18);
                 Paragraph title = new Paragraph("Order Receipt", titleFont);
                 title.Alignment = Element.ALIGN_CENTER;
                 document.Add(title);
                 document.Add(new Paragraph(" "));
 
-                // Add order details
                 Font normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
                 document.Add(new Paragraph($"Order ID: {order.Id}", normalFont));
                 document.Add(new Paragraph($"Tiffin: {order.Tiffin.Name}", normalFont));

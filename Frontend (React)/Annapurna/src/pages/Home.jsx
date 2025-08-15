@@ -795,7 +795,6 @@ const Home = () => {
                 }
             `}</style>
 
-            {/* Hero Section */}
             <div className="hero-section">
                 <div className="container">
                     <div className="row align-items-center min-vh-100">
@@ -884,7 +883,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Features Section */}
             <div className="features-section py-5">
                 <div className="container">
                     <div className="row text-center mb-5">
@@ -917,7 +915,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Testimonials Section */}
             <div style={{ background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)' }} className="py-5">
                 <div className="container">
                     <div className="row text-center mb-5">
@@ -962,7 +959,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* CTA Section */}
             <div className="cta-section text-white py-5">
                 <div className="container">
                     <div className="row text-center">

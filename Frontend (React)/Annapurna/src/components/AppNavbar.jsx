@@ -14,9 +14,8 @@ const AppNavbar = () => {
         const userRole = localStorage.getItem('role');
         setIsLoggedIn(!!token);
         setRole(userRole || '');
-    }, [location]); // rerun this whenever URL changes (e.g., after login)
+    }, [location]);
 
-    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -102,7 +101,6 @@ const AppNavbar = () => {
 
     return (
         <>
-            {/* Custom CSS */}
             <style>{`
                 .navbar-brand:hover {
                     transform: scale(1.05);
@@ -134,6 +132,7 @@ const AppNavbar = () => {
                     color: #fbbf24 !important;
                     font-weight: bold !important;
                 }
+
                 
                 // /* Special styling for info links (About Us & Contact Us) */
                 // .info-link {
@@ -307,7 +306,6 @@ const AppNavbar = () => {
                                 🍽️ Tiffins
                             </Nav.Link>
 
-                            {/* New About Us and Contact Us Links with special styling */}
                             <Nav.Link 
                                 as={Link} 
                                 to="/about" 
@@ -323,7 +321,6 @@ const AppNavbar = () => {
                                 📞 Contact Us
                             </Nav.Link>
 
-                            {/* Role-based Dashboard Links */}
                             {isLoggedIn && role === 'ADMIN' && (
                                 <Nav.Link 
                                     as={Link} 
@@ -384,7 +381,6 @@ const AppNavbar = () => {
                 </Container>
             </Navbar>
 
-            {/* Spacer to prevent content from going under fixed navbar */}
             <div style={{ height: '69px' }}></div>
         </>
     );

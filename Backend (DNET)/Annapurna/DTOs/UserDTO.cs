@@ -14,7 +14,7 @@ public class UserDTO
     public string Password { get; set; } = string.Empty;
 
     [Required]
-    public int Role { get; set; }  // Role ko ab integer type mein change kiya
+    public int Role { get; set; }
 
     public AddressDTO? Address { get; set; }
 

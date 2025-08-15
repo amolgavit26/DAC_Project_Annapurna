@@ -273,7 +273,6 @@ const VendorDashboard = () => {
         <>
             <div dangerouslySetInnerHTML={{__html: customStyles}} />
             
-            {/* Hero Section */}
             <div className="position-relative overflow-hidden hero-gradient" style={{minHeight: '200px'}}>
                 <div className="position-absolute top-0 start-0 w-100 h-100" style={{opacity: '0.1'}}>
                     <div style={{
@@ -301,7 +300,6 @@ const VendorDashboard = () => {
             </div>
 
             <Container className="mt-4 mb-5">
-                {/* Alerts */}
                 {message && (
                     <Alert variant="success" className="shadow-sm border-0 rounded-3 mb-4">
                         <div className="d-flex align-items-center">
@@ -319,7 +317,6 @@ const VendorDashboard = () => {
                     </Alert>
                 )}
 
-                {/* Stats Card */}
                 <Card className="stats-card shadow-sm border-0 rounded-4 mb-4">
                     <Card.Body className="p-4">
                         <Row className="align-items-center">
@@ -345,7 +342,6 @@ const VendorDashboard = () => {
                     </Card.Body>
                 </Card>
 
-                {/* Action Buttons */}
                 <Card className="shadow-sm border-0 rounded-4 mb-4">
                     <Card.Body className="p-4">
                         <h5 className="mb-3" style={{color: '#6366f1'}}>🛠️ Quick Actions</h5>
@@ -378,7 +374,6 @@ const VendorDashboard = () => {
                     </Card.Body>
                 </Card>
 
-                {/* Address Form */}
                 {showAddressForm && (
                     <Card className="shadow-sm border-0 rounded-4 mb-4">
                         <Card.Header className="bg-transparent border-0 p-4 pb-0">
@@ -390,7 +385,6 @@ const VendorDashboard = () => {
                     </Card>
                 )}
 
-                {/* Tiffins Grid */}
                 <Card className="shadow-sm border-0 rounded-4">
                     <Card.Header className="bg-transparent border-0 p-4 pb-0">
                         <div className="d-flex justify-content-between align-items-center">
@@ -508,7 +502,6 @@ const VendorDashboard = () => {
                     </Card.Body>
                 </Card>
 
-                {/* Footer Stats */}
                 <div className="text-center mt-4">
                     <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
                         <Badge className="px-3 py-2 rounded-pill" style={{background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: 'white'}}>
@@ -524,7 +517,6 @@ const VendorDashboard = () => {
                 </div>
             </Container>
 
-            {/* Edit Modal */}
             <Modal show={showEditModal} onHide={() => setShowEditModal(false)} centered size="lg">
                 <Modal.Header closeButton className="border-0">
                     <Modal.Title style={{color: '#6366f1'}}>✏️ Edit Tiffin</Modal.Title>
@@ -616,7 +608,6 @@ const VendorDashboard = () => {
                 </Modal.Footer>
             </Modal>
 
-            {/* Add Modal */}
             <Modal show={showAddModal} onHide={() => setShowAddModal(false)} centered size="lg">
                 <Modal.Header closeButton className="border-0">
                     <Modal.Title style={{color: '#6366f1'}}>➕ Add New Tiffin</Modal.Title>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table, Alert, Spinner, Button, Card, Container, Row, Col, Badge, Collapse } from 'react-bootstrap';
-import AddressForm from './AddressForm'; // ✅ Import the new component
+import AddressForm from './AddressForm'; 
 import BASE_URL from '../config';
 import api from '../services/api';
 
@@ -9,7 +9,7 @@ const CustomerDashboard = () => {
     const [orders, setOrders] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
-    const [showAddressForm, setShowAddressForm] = useState(false); // ✅ toggle state
+    const [showAddressForm, setShowAddressForm] = useState(false);
 
     useEffect(() => {
         fetchOrders();
@@ -287,7 +287,6 @@ const CustomerDashboard = () => {
             <style>{customStyles}</style>
             <div className="gradient-bg">
                 <Container fluid>
-                    {/* Dashboard Header */}
                     <Row className="mb-4">
                         <Col>
                             <div className="dashboard-header">
@@ -302,7 +301,6 @@ const CustomerDashboard = () => {
                         </Col>
                     </Row>
 
-                    {/* Stats Cards */}
                     <Row className="mb-4">
                         <Col md={3}>
                             <Card className="stats-card text-center py-3">
@@ -338,7 +336,6 @@ const CustomerDashboard = () => {
                         </Col>
                     </Row>
 
-                    {/* Error Alert */}
                     {error && (
                         <Alert className="alert-custom alert-danger-custom">
                             <div className="d-flex align-items-center">
@@ -348,7 +345,6 @@ const CustomerDashboard = () => {
                         </Alert>
                     )}
 
-                    {/* Loading State */}
                     {loading && (
                         <div className="loading-container">
                             <Spinner animation="border" role="status" className="loading-spinner mb-3" size="lg" />
@@ -357,7 +353,6 @@ const CustomerDashboard = () => {
                         </div>
                     )}
 
-                    {/* Address Management */}
                     <Row className="mb-4">
                         <Col>
                             <Button
@@ -376,7 +371,6 @@ const CustomerDashboard = () => {
                         </Col>
                     </Row>
 
-                    {/* Orders Table */}
                     {!loading && (
                         <Card className="orders-card">
                             {orders.length > 0 ? (

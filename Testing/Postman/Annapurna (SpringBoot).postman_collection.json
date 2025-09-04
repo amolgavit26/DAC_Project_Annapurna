@@ -1,0 +1,673 @@
+{
+	"info": {
+		"_postman_id": "469422ab-76da-4ac0-b22b-246021ce32f8",
+		"name": "Annapurna (SpringBoot)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44679298",
+		"_collection_link": "https://amolgavit.postman.co/workspace/Amol-Gavit's-Workspace~2faaa23c-e561-4bf6-825e-38c7ee28db67/collection/44679298-469422ab-76da-4ac0-b22b-246021ce32f8?action=share&source=collection_link&creator=44679298"
+	},
+	"item": [
+		{
+			"name": "Register Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Nethu Gavit\",\r\n  \"email\": \"nethugavit0000@gmail.com\",\r\n  \"password\": \"cdac123\",\r\n  \"role\": \"CUSTOMER\",\r\n  \"mobileNumber\": \"8177931221\",\r\n   \"address\": {\r\n    \"street\": \"123 MG Road\",\r\n    \"city\": \"Mumbai\",\r\n    \"state\": \"Maharashtra\",\r\n    \"pinCode\": \"400001\",\r\n    \"country\": \"India\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Vendor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Vendor One\",\r\n  \"email\": \"vendor1@annapurna.com\",\r\n  \"password\": \"cdac123\",\r\n  \"role\": \"VENDOR\",\r\n   \"address\": {\r\n    \"street\": \"123 MG Road\",\r\n    \"city\": \"Mumbai\",\r\n    \"state\": \"Maharashtra\",\r\n    \"pinCode\": \"400001\",\r\n    \"country\": \"India\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Admin Two\",\r\n  \"email\": \"admin2@annapurna.com\",\r\n  \"password\": \"cdac123\",\r\n  \"role\": \"ADMIN\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin1@gmail.com\",\r\n  \"password\": \"cdac123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as Vendor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rajput.harshada.17@gmail.com\",\r\n  \"password\": \"cdac123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"nethugavit0000@gmail.com\",\r\n  \"password\": \"cdac123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tiffins (Public)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tiffin/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tiffin",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order (Customer only)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXRodWdhdml0MDAwMEBnbWFpbC5jb20iLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NTM2ODM1MTUsImV4cCI6MTc1Mzc2OTkxNX0.CqV-bmZCfxSZI6zVxPA0bQvatZcRI0adPdjuWwvL_bISJAxFYMWKpkC5MAdnB-weASe1knsqvoCVIeIbi4JCHQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tiffinId\": 9,\r\n  \"quantity\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders/place",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"place"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Orders (Customer)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lcjJAYW5uYXB1cm5hLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc1MzYzMTYxOCwiZXhwIjoxNzUzNzE4MDE4fQ.a-lW39lES_WXltnXXN8MfViYJHIFpemcljyfZ2OK9vcnKoiOqD6uSIXGbSodEBgT0J49lmpa69bSEQR-l6FWfg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Vendors (Admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAYW5uYXB1cm5hLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzUzOTUxMCwiZXhwIjoxNzUzNjI1OTEwfQ.4FO8vzjRPeQgvLnsNC8-8NwWHzW4SjPVYBxd25tHWf_bwG2KjCTyBu5iRJhYnG9oyWDR_S1EhYTsG9stHcQY-w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/vendors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"vendors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers (Admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUzNjQwOTY5LCJleHAiOjE3NTM3MjczNjl9.r5QDA_NEobX4g-cJraHHO5upV75sCi_DFEA1Mix2IeeZ_nPKX33a6rvXxq-TZFdRB-SKTrXmK8_wkfK8VjdF3Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customers (Admin)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAYW5uYXB1cm5hLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzUzOTUxMCwiZXhwIjoxNzUzNjI1OTEwfQ.4FO8vzjRPeQgvLnsNC8-8NwWHzW4SjPVYBxd25tHWf_bwG2KjCTyBu5iRJhYnG9oyWDR_S1EhYTsG9stHcQY-w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Vendors (Admin)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAYW5uYXB1cm5hLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MzUzOTUxMCwiZXhwIjoxNzUzNjI1OTEwfQ.4FO8vzjRPeQgvLnsNC8-8NwWHzW4SjPVYBxd25tHWf_bwG2KjCTyBu5iRJhYnG9oyWDR_S1EhYTsG9stHcQY-w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/vendor/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"vendor",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Address (Customer, Vendor)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lcjFAYW5uYXB1cm5hLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc1MzYwMzg2NiwiZXhwIjoxNzUzNjkwMjY2fQ.rTCNY5vjwIFLEgJLT0bYgGbN0tWf6ht-88m9WbCEotPcz1cB82dhM8bVGhFOQi8WFfZLiq64cEs2Q7JcoMNIGw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"street\": \"New Street 123\",\r\n  \"city\": \"New City\",\r\n  \"state\": \"New State\",\r\n  \"pinCode\": \"654321\",\r\n  \"country\": \"RUS\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/address/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"address",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order Status (Vendor)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWpwdXQuaGFyc2hhZGEuMTdAZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc1MzY4NjE5NSwiZXhwIjoxNzUzNzcyNTk1fQ._Zc8D5xjhRXiSE7IVGEUDd6iaH7wbNXSFVo8mYqCtQw0Ns3bu4SgCJbn3-IDuBYyKhvZbMOJiREdrk3fsbbQmA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"ACCEPTED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vendor/orders/9/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vendor",
+						"orders",
+						"9",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Order (Customer)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdXN0b21lcjFAYW5uYXB1cm5hLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc1MzU1MDgxMywiZXhwIjoxNzUzNjM3MjEzfQ.rsjvg-TsrH8igtOmAxw9zTRnIjn2aqQ3240IDJw1PFFsUmVydmKVcm0tWD3Z7dZOhHUiUohfT4diNwEKTA2NXQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/9/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"9",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Address (Customer, Vendor)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2ZW5kb3IyQGdtYWlsLmNvbSIsInJvbGUiOiJWRU5ET1IiLCJpYXQiOjE3NTM2Mzk1MzQsImV4cCI6MTc1MzcyNTkzNH0.Clsvj5kvPC1HI8dhKMK6WRAnyx6FzCCCg6oHpYdhFvy8g_mbtl73Zfo3IBqTOr9b-Jqm7gZy5U-8ea-MtJ404Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/address/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"address",
+						"my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Tiffin (Vendor Only)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWpwdXQuaGFyc2hhZGEuMTdAZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc1Mzc2ODQxMywiZXhwIjoxNzUzODU0ODEzfQ.MnWqKnkXwCZ0LwFNcMy69ED1mH4xyOsv0OJtOEyZy1fxNXpPVoiciab6xbNlE2Nnin7uWzWpqXLMJIDG62i3sQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Paneer Tikka\",\r\n  \"description\": \"Delicious paneer lunch box\",\r\n  \"price\": 150,\r\n  \"category\": \"LUNCH\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vendor/tiffins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vendor",
+						"tiffins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Their Tiffin (Vendor Only)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWpwdXQuaGFyc2hhZGEuMTdAZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc1Mzc2ODQxMywiZXhwIjoxNzUzODU0ODEzfQ.MnWqKnkXwCZ0LwFNcMy69ED1mH4xyOsv0OJtOEyZy1fxNXpPVoiciab6xbNlE2Nnin7uWzWpqXLMJIDG62i3sQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/vendor/tiffins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vendor",
+						"tiffins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Their Tiffin (Vendor Only)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWpwdXQuaGFyc2hhZGEuMTdAZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc1MzY4MzU3MywiZXhwIjoxNzUzNzY5OTczfQ.YeLYH0NB_jPd8HDr5s5gQpkgE3IjwbLGBw0ArIWb7_gjxXxobR6N_Ad6umlBuNbB_GyX3BEo8Wdr9r_Wp-EFmg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Pizza\",\r\n  \"description\": \"Cheezie Pizza\",\r\n  \"price\": 199.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vendor/tiffins/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vendor",
+						"tiffins",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Their Tiffin (Vendor Only)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbW9sZ2F2aXQxNTgxMjFAZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc1MzYwODUwNCwiZXhwIjoxNzUzNjk0OTA0fQ.DsSwrSCYmJsPIRuRQ3jl_Gqs35QUwbtnKUNsCQmDMEkxMW8WJDlYMxChBAcvtLzUpDVSJAoEB_8yNqTZ1dY9iQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/vendor/tiffins/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vendor",
+						"tiffins",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Their Orders (Vendor Only)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWpwdXQuaGFyc2hhZGEuMTdAZ21haWwuY29tIiwicm9sZSI6IlZFTkRPUiIsImlhdCI6MTc1MzY0NDAyOSwiZXhwIjoxNzUzNzMwNDI5fQ.SzOYxaB46mjOdSdO1XeT8W5LhAz8tkdx6_7kVfORYhc8RtjQK95GCXNU2muHxeCzz6YDqZrD3fNrWUL4H7E1gg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/vendor/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vendor",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
